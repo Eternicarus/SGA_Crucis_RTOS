@@ -102,6 +102,7 @@ void TestThread(void* paramenter)
 void ReportDataThread(void* paramenter)
 {
     Task_ReportData_Handle();
+    Drv_Delay_Ms(1);
 }
 
 /* 读取JY901S数据线程 */
@@ -162,5 +163,16 @@ void DS1337Thread(void* paramenter)
     {
         Task_DS1337_Handle();
         Drv_Delay_Ms(1000);     
+    }
+}
+
+/* 电机控制线程 */
+void MotorSysThread(void* paramenter)
+{
+    MotorSysInfo MSInfo;
+    while(1)
+    {
+        Task_MotorSys_Handle(&MSInfo);
+        rt_thread_yield();
     }
 }

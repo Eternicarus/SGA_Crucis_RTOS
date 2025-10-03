@@ -21,13 +21,28 @@ Target DLL:      CMSIS_AGDI.dll V1.33.18.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-D:\MINE\My_Project\Crucis设计\STM32代码\SGA_Crucis_RTOS_1\SGA_Crucis_RTOS\Project\STM32.uvprojx
+d:\MINE\My_Project\Crucis设计\STM32代码\SGA_Crucis_RTOS\SGA_Crucis_RTOS\Project\STM32.uvprojx
 Project File Date:  07/01/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 1 (build 106)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Demo'
-".\Objects\STM32.axf" - 0 Error(s), 0 Warning(s).
+compiling task_test.c...
+..\Apply\Task\Src\task_test.c(10): warning:  #177-D: function "S_Test_Uart3_Function" was declared but never referenced
+  static void S_Test_Uart3_Function(void)
+..\Apply\Task\Src\task_test.c(53): warning:  #177-D: function "S_Test_AD4111_Function" was declared but never referenced
+  static void S_Test_AD4111_Function(void)
+..\Apply\Task\Src\task_test.c(66): warning:  #177-D: function "S_Test_MS5837_Function" was declared but never referenced
+  static void S_Test_MS5837_Function(void)
+..\Apply\Task\Src\task_test.c(81): warning:  #177-D: function "S_Test_JY901S_Function" was declared but never referenced
+  static void S_Test_JY901S_Function(void)
+..\Apply\Task\Src\task_test.c(116): warning:  #177-D: function "S_Test_DS1337_Function" was declared but never referenced
+  static void S_Test_DS1337_Function(void)
+..\Apply\Task\Src\task_test.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=47728 RO-data=836 RW-data=5412 ZI-data=22540  
+FromELF: creating hex file...
+".\Objects\STM32.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -40,7 +55,7 @@ Package Vendor: Keil
   D:/Keil_v5/ARM/Pack/Keil/STM32F1xx_DFP/2.2.0/Device/Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

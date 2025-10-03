@@ -135,6 +135,41 @@ static void S_Test_DS1337_Function(void)
  */
 static void S_Test_Motorsys_Function(void)
 {
+    //测试舵机角度
+    uint16_t _usangle;
+    printf("0\r\n");
+    Drv_Delay_Ms(5000);
+    for(_usangle = 0;_usangle < 180;_usangle += 10)
+    {
+        Task_MotorSys_Steer_Angle_Set(A_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(B_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(C_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(D_2,_usangle);
+        Drv_Delay_Ms(200);
+
+    }
+    printf("180\r\n");
+    Drv_Delay_Ms(5000);
+    for(_usangle = 180;_usangle < 360;_usangle += 10)
+    {
+        Task_MotorSys_Steer_Angle_Set(A_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(B_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(C_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(D_2,_usangle);
+        Drv_Delay_Ms(200);
+    }
+    printf("360\r\n");
+    Drv_Delay_Ms(5000);
+    for(_usangle = 360;_usangle > 0;_usangle -= 10)
+    {
+        Task_MotorSys_Steer_Angle_Set(A_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(B_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(C_2,_usangle);
+        // Task_MotorSys_Steer_Angle_Set(D_2,_usangle);
+        Drv_Delay_Ms(200);
+    }
+    printf("0\r\n");
+    Drv_Delay_Ms(5000);
     //测试推进器转动
 //    Task_MotorSys_Thruster_SpeedSet(A_1,1550);
 //    Drv_Delay_Ms(2000);
@@ -153,33 +188,33 @@ static void S_Test_Motorsys_Function(void)
 //    Task_MotorSys_Thruster_SpeedSet(D_1,1500);
 //    Drv_Delay_Ms(2000);
 
-    Task_MotorSys_Steer_Angle_Set(A_2,0);
-    Drv_Delay_Ms(2000);
-    Task_MotorSys_Steer_Angle_Set(A_2,90);
-    Drv_Delay_Ms(2000);
-    Task_MotorSys_Steer_Angle_Set(A_2,180);
-    Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(A_2,0);
+    // Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(A_2,90);
+    // Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(A_2,180);
+    // Drv_Delay_Ms(2000);
 
-    Task_MotorSys_Steer_Angle_Set(B_2,0);
-    Drv_Delay_Ms(2000);
-    Task_MotorSys_Steer_Angle_Set(B_2,90);
-    Drv_Delay_Ms(2000);
-    Task_MotorSys_Steer_Angle_Set(B_2,180);
-    Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(B_2,0);
+    // Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(B_2,90);
+    // Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(B_2,180);
+    // Drv_Delay_Ms(2000);
 
-    Task_MotorSys_Steer_Angle_Set(C_2,0);
-    Drv_Delay_Ms(2000);
-    Task_MotorSys_Steer_Angle_Set(C_2,90);
-    Drv_Delay_Ms(2000);
-    Task_MotorSys_Steer_Angle_Set(C_2,180);
-    Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(C_2,0);
+    // Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(C_2,90);
+    // Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(C_2,180);
+    // Drv_Delay_Ms(2000);
 
-    Task_MotorSys_Steer_Angle_Set(D_2,0);
-    Drv_Delay_Ms(2000);
-    Task_MotorSys_Steer_Angle_Set(D_2,90);
-    Drv_Delay_Ms(2000);
-    Task_MotorSys_Steer_Angle_Set(D_2,180);
-    Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(D_2,0);
+    // Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(D_2,90);
+    // Drv_Delay_Ms(2000);
+    // Task_MotorSys_Steer_Angle_Set(D_2,180);
+    // Drv_Delay_Ms(2000);
     
 //                Task_MotorSys_Steer_Angle_Set(A_2,90);
 //                Drv_Delay_Ms(1000);

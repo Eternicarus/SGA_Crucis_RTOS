@@ -206,5 +206,62 @@ void Task_MotorSys_AllSteer_180Angle(void)
     //Drv_Delay_Ms(500);//延时500ms完成转动
 }
 
+/**
+ * @brief 电机处理函数
+ * @param MSInfo 电机速度信息结构体指针
+ * @retval null
+ */
+void Task_MotorSys_Handle(MotorSysInfo *MSInfo)
+{
+    float fx, fy;
+    float angf;
+    float speedf;
 
+    // A
+    fx = (float)MSInfo->StcStatus.YawSys;
+    fy = (float)(MSInfo->StcStatus.DepthSys + MSInfo->StcStatus.RollSys + MSInfo->StcStatus.PitchSys);
+    angf = atan2f(fy, fx) * RAD2DEG;
+    speedf = hypotf(fx, fy);
+    MSInfo->StcAngle.Angle_A  = (int16_t)(fabsf(angf));         // 存入正角度
+    MSInfo->StcSpeed.usSpeed_A = (int16_t)(speedf * (angf < 0 ? -1.0f : 1.0f)); // 若角为负则 speed 取反
 
+    // B
+    fx = (float)MSInfo->StcStatus.YawSys;
+    fy = (float)(MSInfo->StcStatus.DepthSys + MSInfo->StcStatus.RollSys - MSInfo->StcStatus.PitchSys);
+    angf = atan2f(fy, fx) * RAD2DEG;
+    speedf = hypotf(fx, fy);
+    MSInfo->StcAngle.Angle_B  = (int16_t)(fabsf(angf));
+    MSInfo->StcSpeed.usSpeed_B = (int16_t)(speedf * (angf < 0 ? -1.0f : 1.0f));
+
+    // C
+    fx = (float)MSInfo->StcStatus.YawSys;
+    fy = (float)(MSInfo->StcStatus.DepthSys - MSInfo->StcStatus.RollSys - MSInfo->StcStatus.PitchSys);
+    angf = atan2f(fy, fx) * RAD2DEG;
+    speedf = hypotf(fx, fy);
+    MSInfo->StcAngle.Angle_C  = (int16_t)(fabsf(angf));
+    MSInfo->StcSpeed.usSpeed_C = (int16_t)(speedf * (angf < 0 ? -1.0f : 1.0f));
+
+    // D
+    fx = (float)MSInfo->StcStatus.YawSys;
+    fy = (float)(MSInfo->StcStatus.DepthSys - MSInfo->StcStatus.RollSys + MSInfo->StcStatus.PitchSys);
+    angf = atan2f(fy, fx) * RAD2DEG;
+    speedf = hypotf(fx, fy);
+    MSInfo->StcAngle.Angle_D  = (int16_t)(fabsf(angf));
+    MSInfo->StcSpeed.usSpeed_D = (int16_t)(speedf * (angf < 0 ? -1.0f : 1.0f));
+
+    // 反向增幅
+    if(MSInfo->StcSpeed.usSpeed_A < 0) MSInfo->StcSpeed.usSpeed_A = MSInfo->StcSpeed.usSpeed_A * MOTOR_SPEED_AMP;
+    if(MSInfo->StcSpeed.usSpeed_B < 0) MSInfo->StcSpeed.usSpeed_B = MSInfo->StcSpeed.usSpeed_B * MOTOR_SPEED_AMP;
+    if(MSInfo->StcSpeed.usSpeed_C < 0) MSInfo->StcSpeed.usSpeed_C = MSInfo->StcSpeed.usSpeed_C * MOTOR_SPEED_AMP;
+    if(MSInfo->StcSpeed.usSpeed_D < 0) MSInfo->StcSpeed.usSpeed_D = MSInfo->StcSpeed.usSpeed_D * MOTOR_SPEED_AMP;
+    
+    // 限幅
+    if(MSInfo->StcSpeed.usSpeed_A > MOTOR_MAX_SPEED) MSInfo->StcSpeed.usSpeed_A = MOTOR_MAX_SPEED;
+    if(MSInfo->StcSpeed.usSpeed_A < MOTOR_MIN_SPEED) MSInfo->StcSpeed.usSpeed_A = MOTOR_MIN_SPEED;
+    if(MSInfo->StcSpeed.usSpeed_B > MOTOR_MAX_SPEED) MSInfo->StcSpeed.usSpeed_B = MOTOR_MAX_SPEED;
+    if(MSInfo->StcSpeed.usSpeed_B < MOTOR_MIN_SPEED) MSInfo->StcSpeed.usSpeed_B = MOTOR_MIN_SPEED;
+    if(MSInfo->StcSpeed.usSpeed_C > MOTOR_MAX_SPEED) MSInfo->StcSpeed.usSpeed_C = MOTOR_MAX_SPEED;
+    if(MSInfo->StcSpeed.usSpeed_C < MOTOR_MIN_SPEED) MSInfo->StcSpeed.usSpeed_C = MOTOR_MIN_SPEED;
+    if(MSInfo->StcSpeed.usSpeed_D > MOTOR_MAX_SPEED) MSInfo->StcSpeed.usSpeed_D = MOTOR_MAX_SPEED;
+    if(MSInfo->StcSpeed.usSpeed_D < MOTOR_MIN_SPEED) MSInfo->StcSpeed.usSpeed_D = MOTOR_MIN_SPEED;
+}

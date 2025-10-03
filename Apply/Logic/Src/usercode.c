@@ -49,7 +49,7 @@ void UserLogic_Code(void)
 	HandleModeThread_t 	= rt_thread_create("HandleModeThread",HandleModeThread,NULL,512,5,20);
 	AutoModeThread_t 	= rt_thread_create("AutoModeThread",AutoModeThread,NULL,512,5,20);
 
-// #define TEST
+#define TEST
 
 #ifdef TEST
 	rt_thread_startup(TestThread_t);			//≤‚ ‘œﬂ≥Ã

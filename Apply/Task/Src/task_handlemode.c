@@ -6,10 +6,7 @@
  */
 void Task_HandleMode_Process(HandleModeInfo *HMInfo)
 {
-	static uint8_t Position_AC = 90;               //存放AC舵机角度位置
-	static uint8_t Position_BD = 90;               //存放BD舵机角度位置
-	static uint16_t Speed_AC = 1500;                  //存放AC推进器速度
-	static uint16_t Speed_BD = 1500;                  //存放BD推进器速度
+	MotorSysInfo MSInfo;
     //非0数据显示
     if(HMInfo->JoystickInfo[0] != 0.0f && HMInfo->JoystickInfo[1] != 0.0f)
         printf("%f %f\r\n",HMInfo->JoystickInfo[0],HMInfo->JoystickInfo[1]);
@@ -20,57 +17,65 @@ void Task_HandleMode_Process(HandleModeInfo *HMInfo)
 		case 0:
 			if(HMInfo->keyPressed)
 			{
-//				Position_AC += 10;
-				Task_MotorSys_Thruster_SpeedSet(A_1,1400);
-                Task_MotorSys_Thruster_SpeedSet(B_1,1400);
-                Task_MotorSys_Thruster_SpeedSet(C_1,1600);
-                Task_MotorSys_Thruster_SpeedSet(D_1,1600);
+				MSInfo.StcDirect.Direct_A = -200;
+				MSInfo.StcDirect.Direct_B = -200;
+				MSInfo.StcDirect.Direct_C = -200;
+				MSInfo.StcDirect.Direct_D = -200;
 			}
 			else
 			{
-				Task_MotorSys_AllThruster_Stop();
+				MSInfo.StcDirect.Direct_A = 0;
+				MSInfo.StcDirect.Direct_B = 0;
+				MSInfo.StcDirect.Direct_C = 0;
+				MSInfo.StcDirect.Direct_D = 0;
 			}
 			break;
 		case 1:
 			if(HMInfo->keyPressed)
 			{
-//				Position_BD += 10;
-				Task_MotorSys_Thruster_SpeedSet(A_1,1400);
-                Task_MotorSys_Thruster_SpeedSet(B_1,1600);
-                Task_MotorSys_Thruster_SpeedSet(C_1,1600);
-                Task_MotorSys_Thruster_SpeedSet(D_1,1400);
+				MSInfo.StcDirect.Direct_A = -200;
+				MSInfo.StcDirect.Direct_B = 200;
+				MSInfo.StcDirect.Direct_C = -200;
+				MSInfo.StcDirect.Direct_D = 200;
 			}
 			else
 			{
-				Task_MotorSys_AllThruster_Stop();
+				MSInfo.StcDirect.Direct_A = 0;
+				MSInfo.StcDirect.Direct_B = 0;
+				MSInfo.StcDirect.Direct_C = 0;
+				MSInfo.StcDirect.Direct_D = 0;
 			}
 			break;
 		case 2:
 			if(HMInfo->keyPressed)
 			{
-//				Position_BD -= 10;
-				Task_MotorSys_Thruster_SpeedSet(A_1,1600);
-                Task_MotorSys_Thruster_SpeedSet(B_1,1400);
-                Task_MotorSys_Thruster_SpeedSet(C_1,1600);
-                Task_MotorSys_Thruster_SpeedSet(D_1,1400);
+				MSInfo.StcDirect.Direct_A = 200;
+				MSInfo.StcDirect.Direct_B = -200;
+				MSInfo.StcDirect.Direct_C = 200;
+				MSInfo.StcDirect.Direct_D = -200;
 			}
 			else
 			{
-				Task_MotorSys_AllThruster_Stop();
+				MSInfo.StcDirect.Direct_A = 0;
+				MSInfo.StcDirect.Direct_B = 0;
+				MSInfo.StcDirect.Direct_C = 0;
+				MSInfo.StcDirect.Direct_D = 0;
 			}
 			break;
 		case 3:
 			if(HMInfo->keyPressed)
 			{
-//				Position_AC -= 10;
-				Task_MotorSys_Thruster_SpeedSet(A_1,1600);
-                Task_MotorSys_Thruster_SpeedSet(B_1,1600);
-                Task_MotorSys_Thruster_SpeedSet(C_1,1600);
-                Task_MotorSys_Thruster_SpeedSet(D_1,1600);
+				MSInfo.StcDirect.Direct_A = 200;
+				MSInfo.StcDirect.Direct_B = 200;
+				MSInfo.StcDirect.Direct_C = 200;
+				MSInfo.StcDirect.Direct_D = 200;
 			}
 			else
 			{
-				Task_MotorSys_AllThruster_Stop();
+				MSInfo.StcDirect.Direct_A = 0;
+				MSInfo.StcDirect.Direct_B = 0;
+				MSInfo.StcDirect.Direct_C = 0;
+				MSInfo.StcDirect.Direct_D = 0;
 			}
 			break;
 		case 6:

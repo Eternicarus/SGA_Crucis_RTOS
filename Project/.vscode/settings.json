@@ -80,7 +80,8 @@
         "task_reportdata.h": "c",
         "task_ms5837.h": "c",
         "threadpool.h": "c",
-        "task_test.h": "c"
+        "task_test.h": "c",
+        "task_motorsys.h": "c"
     },
     "files.encoding": "gb2312",
     "C_Cpp.default.compilerPath": "C:/TDM-GCC-64/bin/gcc.exe"
