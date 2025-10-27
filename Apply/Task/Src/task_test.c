@@ -136,36 +136,36 @@ static void S_Test_DS1337_Function(void)
 static void S_Test_Motorsys_Function(void)
 {
     //²âÊÔ¶æ»ú½Ç¶È
-    uint16_t _usangle;
+    uint16_t angle;
     printf("0\r\n");
     Drv_Delay_Ms(5000);
-    for(_usangle = 0;_usangle < 180;_usangle += 10)
+    for(angle = 0; angle < 180; angle += 10)
     {
-        Task_MotorSys_Steer_Angle_Set(A_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(B_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(C_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(D_2,_usangle);
+        Task_MotorSys_Steer_Angle_Set(A_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(B_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(C_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(D_2,angle);
         Drv_Delay_Ms(200);
 
     }
     printf("180\r\n");
     Drv_Delay_Ms(5000);
-    for(_usangle = 180;_usangle < 360;_usangle += 10)
+    for(angle = 180; angle < 360; angle += 10)
     {
-        Task_MotorSys_Steer_Angle_Set(A_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(B_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(C_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(D_2,_usangle);
+        Task_MotorSys_Steer_Angle_Set(A_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(B_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(C_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(D_2,angle);
         Drv_Delay_Ms(200);
     }
     printf("360\r\n");
     Drv_Delay_Ms(5000);
-    for(_usangle = 360;_usangle > 0;_usangle -= 10)
+    for(angle = 360; angle > 0; angle -= 10)
     {
-        Task_MotorSys_Steer_Angle_Set(A_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(B_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(C_2,_usangle);
-        // Task_MotorSys_Steer_Angle_Set(D_2,_usangle);
+        Task_MotorSys_Steer_Angle_Set(A_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(B_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(C_2,angle);
+        // Task_MotorSys_Steer_Angle_Set(D_2,angle);
         Drv_Delay_Ms(200);
     }
     printf("0\r\n");

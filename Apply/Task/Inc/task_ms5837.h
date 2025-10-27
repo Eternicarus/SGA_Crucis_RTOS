@@ -5,6 +5,9 @@
 #include "config.h"
 #include "usercode.h"
 #include "task_reportdata.h"
+#include "task_motorsys.h"
+
+extern volatile int16_t TargetDepth;
 
 void Task_MS5837_Handle(void);
 

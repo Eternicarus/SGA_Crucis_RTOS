@@ -3,6 +3,7 @@
 /**
  * @brief 手动模式处理函数
  * @param HMInfo 手动模式信息结构体指针
+ * @note 目前是没有加PID控制的，后续加上的话把转向和升降的部分改成PID预期值即可
  */
 void Task_HandleMode_Process(HandleModeInfo *HMInfo)
 {
@@ -14,116 +15,62 @@ void Task_HandleMode_Process(HandleModeInfo *HMInfo)
 	//手柄数据处理
 	switch((*HMInfo).key)
 	{
+		//平移
 		case 0:
 			if(HMInfo->keyPressed)
 			{
-				MSInfo.StcDirect.Direct_A = -200;
-				MSInfo.StcDirect.Direct_B = -200;
-				MSInfo.StcDirect.Direct_C = -200;
-				MSInfo.StcDirect.Direct_D = -200;
+				MSInfo.StcStatus.DirectSys[0] -= SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[1] -= SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[2] -= SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[3] -= SPEED_DIRECT;
 			}
 			else
-			{
-				MSInfo.StcDirect.Direct_A = 0;
-				MSInfo.StcDirect.Direct_B = 0;
-				MSInfo.StcDirect.Direct_C = 0;
-				MSInfo.StcDirect.Direct_D = 0;
-			}
-			break;
-		case 1:
-			if(HMInfo->keyPressed)
-			{
-				MSInfo.StcDirect.Direct_A = -200;
-				MSInfo.StcDirect.Direct_B = 200;
-				MSInfo.StcDirect.Direct_C = -200;
-				MSInfo.StcDirect.Direct_D = 200;
-			}
-			else
-			{
-				MSInfo.StcDirect.Direct_A = 0;
-				MSInfo.StcDirect.Direct_B = 0;
-				MSInfo.StcDirect.Direct_C = 0;
-				MSInfo.StcDirect.Direct_D = 0;
-			}
-			break;
-		case 2:
-			if(HMInfo->keyPressed)
-			{
-				MSInfo.StcDirect.Direct_A = 200;
-				MSInfo.StcDirect.Direct_B = -200;
-				MSInfo.StcDirect.Direct_C = 200;
-				MSInfo.StcDirect.Direct_D = -200;
-			}
-			else
-			{
-				MSInfo.StcDirect.Direct_A = 0;
-				MSInfo.StcDirect.Direct_B = 0;
-				MSInfo.StcDirect.Direct_C = 0;
-				MSInfo.StcDirect.Direct_D = 0;
-			}
+				memset(MSInfo.StcStatus.YawSys, 0, sizeof(MSInfo.StcStatus.YawSys));
 			break;
 		case 3:
 			if(HMInfo->keyPressed)
 			{
-				MSInfo.StcDirect.Direct_A = 200;
-				MSInfo.StcDirect.Direct_B = 200;
-				MSInfo.StcDirect.Direct_C = 200;
-				MSInfo.StcDirect.Direct_D = 200;
+				MSInfo.StcStatus.DirectSys[0] += SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[1] += SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[2] += SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[3] += SPEED_DIRECT;
 			}
 			else
-			{
-				MSInfo.StcDirect.Direct_A = 0;
-				MSInfo.StcDirect.Direct_B = 0;
-				MSInfo.StcDirect.Direct_C = 0;
-				MSInfo.StcDirect.Direct_D = 0;
-			}
+				memset(MSInfo.StcStatus.YawSys, 0, sizeof(MSInfo.StcStatus.YawSys));
 			break;
+		//转向
+		case 1:
+			if(HMInfo->keyPressed)
+				MSInfo.StcStatus.YawSys -= SPEED_YAW;
+				//TargetYaw -= SPEED_YAW;
+			else
+				memset(MSInfo.StcStatus.YawSys, 0, sizeof(MSInfo.StcStatus.YawSys));
+			break;
+		case 2:
+			if(HMInfo->keyPressed)
+				MSInfo.StcStatus.YawSys += SPEED_YAW;
+				//TargetYaw -= SPEED_YAW;
+			else
+				memset(MSInfo.StcStatus.YawSys, 0, sizeof(MSInfo.StcStatus.YawSys));
+			break;
+		//升降
 		case 6:
 			if(HMInfo->keyPressed)
 			{
-				Task_MotorSys_Steer_Angle_Set(A_2,0);
-				Drv_Delay_Ms(100);
-				Task_MotorSys_Steer_Angle_Set(B_2,0);
-				Drv_Delay_Ms(100);
-				Task_MotorSys_Steer_Angle_Set(C_2,0);
-				Drv_Delay_Ms(100);
-				Task_MotorSys_Steer_Angle_Set(D_2,0);
-				Drv_Delay_Ms(100);
+				MSInfo.StcStatus.DepthSys += SPEED_DEPTH;
+				//TargetDepth += SPEED_DEPTH;
 			}
+			else
+				memset(MSInfo.StcStatus.YawSys, 0, sizeof(MSInfo.StcStatus.YawSys));
 			break;
 		case 7:
 			if(HMInfo->keyPressed)
-			{
-				Task_MotorSys_Steer_Angle_Set(A_2,90);
-				Drv_Delay_Ms(100);
-				Task_MotorSys_Steer_Angle_Set(B_2,90);
-				Drv_Delay_Ms(100);
-				Task_MotorSys_Steer_Angle_Set(C_2,90);
-				Drv_Delay_Ms(100);
-				Task_MotorSys_Steer_Angle_Set(D_2,90);
-				Drv_Delay_Ms(100);
-			}
+				MSInfo.StcStatus.DepthSys -= SPEED_DEPTH;
+				// TargetDepth -= SPEED_DEPTH;
+			else
+				memset(MSInfo.StcStatus.YawSys, 0, sizeof(MSInfo.StcStatus.YawSys));
 			break;
 	}
-
-	//限幅
-//	if(Position_AC >= 180)	Position_AC = 180;
-//	if(Position_AC <= 0)	Position_AC = 0;
-//	if(Position_BD >= 180)	Position_BD = 180;
-//	if(Position_BD <= 0)	Position_BD = 0;
-
-//	if(HMInfo->keyPressed)
-//	{
-//		printf("%d %d\r\n",Position_AC,Position_BD);
-//		Task_MotorSys_Steer_Angle_Set(A_2,Position_AC);
-//        Drv_Delay_Ms(100);
-//        Task_MotorSys_Steer_Angle_Set(B_2,Position_BD);
-//        Drv_Delay_Ms(100);
-//        Task_MotorSys_Steer_Angle_Set(C_2,Position_BD);
-//        Drv_Delay_Ms(100);
-//        Task_MotorSys_Steer_Angle_Set(D_2,Position_AC);
-//        Drv_Delay_Ms(100);
-//	}
 
     //手柄数据清零，防止重复使用
     HMInfo->JoystickInfo[0] = 0.0f;

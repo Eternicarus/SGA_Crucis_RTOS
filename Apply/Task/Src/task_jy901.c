@@ -1,11 +1,16 @@
 #include "task_jy901.h"
 
+volatile int16_t TargetYaw = 0;     // 目标偏航角
+volatile int16_t TargetPitch = 0;   // 目标俯仰角
+volatile int16_t TargetRoll = 0;    // 目标横滚角
+
 /**
  * @brief JY901处理函数
  * @param Null
  */
 void Task_JY901_Handle(void)
 {
+    MotorSysInfo MSInfo;
     //如果获取到信号量，说明接收到数据
 	if(rt_sem_take(JY901S_Sem,RT_WAITING_FOREVER) == RT_EOK)
 	{
@@ -59,6 +64,11 @@ void Task_JY901_Handle(void)
             memcpy(&ReportDataBuffer[GYRO_BASE                 ],&JY901S.stcGyro.ConGyroX,FLOAT_SIZE);
             memcpy(&ReportDataBuffer[GYRO_BASE +     FLOAT_SIZE],&JY901S.stcGyro.ConGyroY,FLOAT_SIZE);
             memcpy(&ReportDataBuffer[GYRO_BASE + 2 * FLOAT_SIZE],&JY901S.stcGyro.ConGyroZ,FLOAT_SIZE);
+
+            /* 姿态解算PID示例 */
+            // MSInfo.StcStatus.YawSys   = MSAlgo_PID_Calculate(&YawPID,  JY901S.stcAngle.ConYaw,   TargetYaw);
+            // MSInfo.StcStatus.PitchSys = MSAlgo_PID_Calculate(&PitchPID,JY901S.stcAngle.ConPitch, TargetPitch);
+            // MSInfo.StcStatus.RollSys  = MSAlgo_PID_Calculate(&RollPID, JY901S.stcAngle.ConRoll,  TargetRoll);
         }
 	}
 }

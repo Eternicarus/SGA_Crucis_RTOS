@@ -30,6 +30,14 @@ extern tagMS5837_T MS5837;
 
 extern tagDS3231_T DS1337;
 
+extern tagPID_T DepthPID;
+
+extern tagPID_T YawPID;
+
+extern tagPID_T PitchPID;
+
+extern tagPID_T RollPID;
+
 /* 推进器和舵机在板上的标记 其中1为推进器 2为舵机 */
 #define     A_1      0
 #define     A_2      1

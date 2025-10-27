@@ -1,5 +1,33 @@
 #include "config.h"
 
+/* PID²ÎÊý */
+tagPID_T DepthPID =
+{
+	.fKp 		= 0.0f,
+	.fKi 		= 0.0f,
+	.fKd 		= 0.0f,
+};
+
+tagPID_T YawPID =
+{
+	.fKp 		= 0.0f,
+	.fKi 		= 0.0f,
+	.fKd 		= 0.0f,
+};
+
+tagPID_T PitchPID =
+{
+	.fKp 		= 0.0f,
+	.fKi 		= 0.0f,
+	.fKd 		= 0.0f,
+};
+
+tagPID_T RollPID =
+{
+	.fKp 		= 0.0f,
+	.fKi 		= 0.0f,
+	.fKd 		= 0.0f,
+};
 
 /* LED */
 tagGPIO_T LED[] =

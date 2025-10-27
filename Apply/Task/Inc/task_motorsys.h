@@ -12,19 +12,11 @@
 
 typedef struct 
 {
-    int16_t usSpeed_A;
-    int16_t usSpeed_B;
-    int16_t usSpeed_C;
-    int16_t usSpeed_D;
+    int16_t Speed_A;
+    int16_t Speed_B;
+    int16_t Speed_C;
+    int16_t Speed_D;
 }SpeedInfo;
-
-typedef struct 
-{
-    int16_t Direct_A;
-    int16_t Direct_B;
-    int16_t Direct_C;
-    int16_t Direct_D;
-}DirectInfo;
 
 typedef struct 
 {
@@ -40,6 +32,7 @@ typedef struct
     int16_t PitchSys;
     int16_t YawSys;
     int16_t DepthSys;
+    int16_t DirectSys[4];
 }StatusInfo;
 
 typedef struct 
@@ -47,7 +40,6 @@ typedef struct
     SpeedInfo StcSpeed;
     AngleInfo StcAngle;
     StatusInfo StcStatus;
-    DirectInfo StcDirect;
 }MotorSysInfo;
 
 void Task_MotorSys_Init(void);
@@ -64,6 +56,7 @@ void Task_MotorSys_Steer_90Angle(uint8_t index);
 void Task_MotorSys_AllSteer_90Angle(void);
 void Task_MotorSys_Steer_180Angle(uint8_t index);
 void Task_MotorSys_AllSteer_180Angle(void);
+void Task_MotorSys_Handle(MotorSysInfo *MSInfo);
 
 #endif // !__TASK_MOTORSYS_H__
 

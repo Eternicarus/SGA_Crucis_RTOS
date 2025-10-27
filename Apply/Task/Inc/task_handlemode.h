@@ -6,6 +6,10 @@
 #include "usercode.h"
 #include "task_conf.h"
 
+#define SPEED_DIRECT 200
+#define SPEED_YAW    200
+#define SPEED_DEPTH  200
+
 /* 手动模式信息结构体 */
 typedef struct 
 {
