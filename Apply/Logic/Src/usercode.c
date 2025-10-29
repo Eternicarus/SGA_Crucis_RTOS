@@ -17,6 +17,7 @@ rt_thread_t IMX6ULLThread_t = RT_NULL;
 rt_thread_t DS1337Thread_t = RT_NULL;
 rt_thread_t AutoModeThread_t = RT_NULL;
 rt_thread_t HandleModeThread_t = RT_NULL;
+rt_thread_t MotorSysThread_t = RT_NULL;
 
 /* 信号量句柄 */
 rt_sem_t JY901S_Sem = RT_NULL;			//JY901S数据信号量
@@ -48,8 +49,9 @@ void UserLogic_Code(void)
 	DS1337Thread_t 		= rt_thread_create("DS1337Thread",DS1337Thread,NULL,512,9,20);
 	HandleModeThread_t 	= rt_thread_create("HandleModeThread",HandleModeThread,NULL,512,5,20);
 	AutoModeThread_t 	= rt_thread_create("AutoModeThread",AutoModeThread,NULL,512,5,20);
+	MotorSysThread_t	= rt_thread_create("MotorSysThread",MotorSysThread,NULL,512,6,20);
 
-#define TEST
+// #define TEST
 
 #ifdef TEST
 	rt_thread_startup(TestThread_t);			//测试线程
@@ -64,5 +66,6 @@ void UserLogic_Code(void)
 	rt_thread_startup(DS1337Thread_t);			//DS1337线程
 	rt_thread_startup(HandleModeThread_t);		//手动线程
 	rt_thread_startup(AutoModeThread_t);		//自动线程
+	rt_thread_startup(MotorSysThread_t);		//电机系统线程
 #endif // TEST
 }

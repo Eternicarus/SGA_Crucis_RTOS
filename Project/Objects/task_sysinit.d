@@ -77,6 +77,7 @@
 .\objects\task_sysinit.o: ..\Bsp\OCD\Inc\ocd_jy901.h
 .\objects\task_sysinit.o: ..\Bsp\OCD\Inc\ocd_ds3231.h
 .\objects\task_sysinit.o: ..\Bsp\Algo\Inc\algo_conf.h
+.\objects\task_sysinit.o: ..\Bsp\Algo\Inc\algo_pid.h
 .\objects\task_sysinit.o: ..\Bsp\Dev\Inc\dev_conf.h
 .\objects\task_sysinit.o: ..\Apply\Task\Inc\task_ad4111.h
 .\objects\task_sysinit.o: ..\Apply\Logic\Inc\usercode.h

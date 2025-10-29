@@ -5,10 +5,13 @@
 #include "config.h"
 #include "usercode.h"
 
-#define RAD2DEG (180.0f / 3.14159265358979323846f) // 弧度转角度
-#define MOTOR_MAX_SPEED 400  // 推进器最大速度
-#define MOTOR_MIN_SPEED -400 // 推进器最小速度
-#define MOTOR_SPEED_AMP 1.1 // 推进器速度反向增幅
+
+#define STOP_PWM_HIGHTIME 1500                          // 推进器高电平时间1.5ms停转
+#define RAD2DEG (180.0f / 3.14159265358979323846f)      // 弧度转角度
+#define MOTOR_MAX_SPEED 100                             // 推进器最大速度
+#define MOTOR_MIN_SPEED -100                            // 推进器最小速度
+#define MOTOR_MAX_ANGLE 180                             // 舵机最大转角
+#define MOTOR_SPEED_AMP 1.1                             // 推进器速度反向增幅
 
 typedef struct 
 {

@@ -10,7 +10,7 @@ volatile int16_t TargetRoll = 0;    // 目标横滚角
  */
 void Task_JY901_Handle(void)
 {
-    MotorSysInfo MSInfo;
+    // MotorSysInfo MSInfo;
     //如果获取到信号量，说明接收到数据
 	if(rt_sem_take(JY901S_Sem,RT_WAITING_FOREVER) == RT_EOK)
 	{

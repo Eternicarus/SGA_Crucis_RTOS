@@ -6,7 +6,7 @@
 #include "usercode.h"
 #include "task_conf.h"
 
-#define DEBUG_PRINTF
+// #define DEBUG_PRINTF
 
 void Task_IPCcmd_Handle(void);
 

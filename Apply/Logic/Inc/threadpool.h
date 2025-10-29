@@ -12,5 +12,6 @@ void IMX6ULLThread(void* paramenter);
 void DS1337Thread(void* paramenter);
 void AutoModeThread(void* paramenter);
 void HandleModeThread(void* paramenter);
+void MotorSysThread(void* paramenter);
 
 #endif

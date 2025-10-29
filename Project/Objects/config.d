@@ -72,4 +72,5 @@
 .\objects\config.o: ..\Bsp\OCD\Inc\ocd_jy901.h
 .\objects\config.o: ..\Bsp\OCD\Inc\ocd_ds3231.h
 .\objects\config.o: ..\Bsp\Algo\Inc\algo_conf.h
+.\objects\config.o: ..\Bsp\Algo\Inc\algo_pid.h
 .\objects\config.o: ..\Bsp\Dev\Inc\dev_conf.h

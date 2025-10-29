@@ -27,28 +27,26 @@ Project File Date:  07/01/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 1 (build 106)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Demo'
-compiling usercode.c...
-compiling task_irq.c...
-compiling threadpool.c...
-compiling task_handlemode.c...
-compiling task_ipccmd.c...
-compiling task_test.c...
-..\Apply\Task\Src\task_test.c(10): warning:  #177-D: function "S_Test_Uart3_Function" was declared but never referenced
-  static void S_Test_Uart3_Function(void)
-..\Apply\Task\Src\task_test.c(53): warning:  #177-D: function "S_Test_AD4111_Function" was declared but never referenced
-  static void S_Test_AD4111_Function(void)
-..\Apply\Task\Src\task_test.c(66): warning:  #177-D: function "S_Test_MS5837_Function" was declared but never referenced
-  static void S_Test_MS5837_Function(void)
-..\Apply\Task\Src\task_test.c(81): warning:  #177-D: function "S_Test_JY901S_Function" was declared but never referenced
-  static void S_Test_JY901S_Function(void)
-..\Apply\Task\Src\task_test.c(116): warning:  #177-D: function "S_Test_DS1337_Function" was declared but never referenced
-  static void S_Test_DS1337_Function(void)
-..\Apply\Task\Src\task_test.c: 5 warnings, 0 errors
-compiling task_motorsys.c...
 compiling task_userinit.c...
 compiling task_sysinit.c...
+compiling task_handlemode.c...
+..\Apply\Task\Src\task_handlemode.c(48): warning:  #167-D: argument of type "int16_t" is incompatible with parameter of type "void *"
+  				memset(MSInfo->StcStatus.YawSys, 0, sizeof(MSInfo->StcStatus.YawSys));
+..\Apply\Task\Src\task_handlemode.c(55): warning:  #167-D: argument of type "int16_t" is incompatible with parameter of type "void *"
+  				memset(MSInfo->StcStatus.YawSys, 0, sizeof(MSInfo->StcStatus.YawSys));
+..\Apply\Task\Src\task_handlemode.c(63): warning:  #167-D: argument of type "int16_t" is incompatible with parameter of type "void *"
+  				memset(MSInfo->StcStatus.DepthSys, 0, sizeof(MSInfo->StcStatus.DepthSys));
+..\Apply\Task\Src\task_handlemode.c(70): warning:  #167-D: argument of type "int16_t" is incompatible with parameter of type "void *"
+  				memset(MSInfo->StcStatus.DepthSys, 0, sizeof(MSInfo->StcStatus.DepthSys));
+..\Apply\Task\Src\task_handlemode.c(77): warning:  #68-D: integer conversion resulted in a change of sign
+  	HMInfo->key = -1;
+..\Apply\Task\Src\task_handlemode.c: 5 warnings, 0 errors
+compiling task_ipccmd.c...
+compiling task_irq.c...
+compiling usercode.c...
+compiling threadpool.c...
 linking...
-Program Size: Code=47556 RO-data=836 RW-data=5412 ZI-data=22540  
+Program Size: Code=49348 RO-data=836 RW-data=5404 ZI-data=22676  
 FromELF: creating hex file...
 ".\Objects\STM32.axf" - 0 Error(s), 5 Warning(s).
 
@@ -63,7 +61,7 @@ Package Vendor: Keil
   D:/Keil_v5/ARM/Pack/Keil/STM32F1xx_DFP/2.2.0/Device/Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:01:27
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

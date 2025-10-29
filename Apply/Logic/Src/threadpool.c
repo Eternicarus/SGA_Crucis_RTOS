@@ -6,7 +6,7 @@
 #include "dev_conf.h"		/* Dev层头文件配置 */
 #include "algo_conf.h"		/* Algo层头文件配置 */
 #include "config.h"			/* I/O配置头文件配置 */
-
+MotorSysInfo MSInfo = {0};   // 初始化一次
 
 /* 线程入口函数（使用裸机忽略此文件） */
 /* 自动线程 */
@@ -81,8 +81,8 @@ void HandleModeThread(void* paramenter)
             }
         }
         
-        //printf("HandleMode\r\n");
-        Task_HandleMode_Process(&HMInfo);
+        // printf("HandleMode\r\n");
+        Task_HandleMode_Process(&HMInfo,&MSInfo);
         Drv_Delay_Ms(500);  //执行时间与上位机手柄发送一帧数据时间相同
         rt_thread_yield();
     }
@@ -169,10 +169,11 @@ void DS1337Thread(void* paramenter)
 /* 电机控制线程 */
 void MotorSysThread(void* paramenter)
 {
-    MotorSysInfo MSInfo;
+    // MotorSysInfo MSInfo = {0};   // 初始化一次
+    printf("MotorSysThread Start\r\n");
     while(1)
     {
         Task_MotorSys_Handle(&MSInfo);
-        rt_thread_yield();
+        Drv_Delay_Ms(1000);
     }
 }

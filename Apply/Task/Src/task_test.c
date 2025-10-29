@@ -9,10 +9,10 @@ static uint8_t Uart3_ReceiveNum = 0;
  */
 static void S_Test_Uart3_Function(void)
 {
-    Uart3_ReceiveNum = Drv_Uart_Receive_DMA(&Uart3,Uart3_ReceiveBuffer);
+    Uart3_ReceiveNum = Drv_Uart_Receive_DMA(&Uart1,Uart3_ReceiveBuffer);
     if(Uart3_ReceiveNum != 0)
     {
-        Drv_Uart_Transmit(&Uart3,Uart3_ReceiveBuffer,Uart3_ReceiveNum);
+        Drv_Uart_Transmit(&Uart1,Uart3_ReceiveBuffer,Uart3_ReceiveNum);
         Uart3_ReceiveNum = 0;
     }
 }
@@ -245,7 +245,7 @@ static void S_Test_Motorsys_Function(void)
  */
 void Task_Test_Handle(void)
 {
-    // S_Test_Uart3_Function();
+    S_Test_Uart3_Function();
 
     // S_Test_AD4111_Function();
 
@@ -255,7 +255,8 @@ void Task_Test_Handle(void)
 
     // S_Test_DS1337_Function();
 
-    S_Test_Motorsys_Function();
+//    S_Test_Motorsys_Function();
 	printf("run\r\n");
+	Drv_Delay_Ms(1000);
 }
 

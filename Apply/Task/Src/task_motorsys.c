@@ -7,11 +7,9 @@
 void Task_MotorSys_Init(void)
 {
     Drv_PWM_Init(PWM,11);   /* 初始化PWM */
-    Drv_Delay_Ms(10000);
+    Drv_Delay_Ms(3000);
 }
 
-/* 推进器高电平时间1.5ms停转 */
-#define STOP_PWM_HIGHTIME 1500
 
 /**
  * @brief 推进器转速设置子函数
@@ -216,14 +214,13 @@ void Task_MotorSys_Handle(MotorSysInfo *MSInfo)
     float fx, fy;
     float angf;
     float speedf;
-
     // A
     fx = (float)(MSInfo->StcStatus.DirectSys[0] + MSInfo->StcStatus.YawSys);
     fy = (float)(MSInfo->StcStatus.DepthSys + MSInfo->StcStatus.RollSys + MSInfo->StcStatus.PitchSys);
     angf = atan2f(fy, fx) * RAD2DEG;
     speedf = hypotf(fx, fy);
-    MSInfo->StcAngle.Angle_A  = (int16_t)(fabsf(angf));         // 存入正角度
-    MSInfo->StcSpeed.Speed_A = (int16_t)(speedf * (angf < 0 ? -1.0f : 1.0f)); // 若角为负则 speed 取反
+    MSInfo->StcAngle.Angle_A  = (int16_t)(fabsf(angf));         				// 存入正角度
+    MSInfo->StcSpeed.Speed_A = (int16_t)(speedf * (angf < 0 ? -1.0f : 1.0f)); 	// 若角为负则 speed 取反
 
     // B
     fx = (float)(MSInfo->StcStatus.DirectSys[1] - MSInfo->StcStatus.YawSys);
@@ -264,4 +261,27 @@ void Task_MotorSys_Handle(MotorSysInfo *MSInfo)
     if(MSInfo->StcSpeed.Speed_C < MOTOR_MIN_SPEED) MSInfo->StcSpeed.Speed_C = MOTOR_MIN_SPEED;
     if(MSInfo->StcSpeed.Speed_D > MOTOR_MAX_SPEED) MSInfo->StcSpeed.Speed_D = MOTOR_MAX_SPEED;
     if(MSInfo->StcSpeed.Speed_D < MOTOR_MIN_SPEED) MSInfo->StcSpeed.Speed_D = MOTOR_MIN_SPEED;
+    if(MSInfo->StcAngle.Angle_A > MOTOR_MAX_ANGLE) MSInfo->StcAngle.Angle_A = MOTOR_MAX_ANGLE;
+    if(MSInfo->StcAngle.Angle_B > MOTOR_MAX_ANGLE) MSInfo->StcAngle.Angle_B = MOTOR_MAX_ANGLE;
+    if(MSInfo->StcAngle.Angle_C > MOTOR_MAX_ANGLE) MSInfo->StcAngle.Angle_C = MOTOR_MAX_ANGLE;
+    if(MSInfo->StcAngle.Angle_D > MOTOR_MAX_ANGLE) MSInfo->StcAngle.Angle_D = MOTOR_MAX_ANGLE;
+
+    // printf("A_Speed:%d A_Angle:%d | B_Speed:%d B_Angle:%d | C_Speed:%d C_Angle:%d | D_Speed:%d D_Angle:%d\r\n",
+    //     MSInfo->StcSpeed.Speed_A, MSInfo->StcAngle.Angle_A,
+    //     MSInfo->StcSpeed.Speed_B, MSInfo->StcAngle.Angle_B,
+    //     MSInfo->StcSpeed.Speed_C, MSInfo->StcAngle.Angle_C,
+    //     MSInfo->StcSpeed.Speed_D, MSInfo->StcAngle.Angle_D);
+
+    // 设置推进器速度和舵机角度
+    Task_MotorSys_Thruster_SpeedSet(A_1, STOP_PWM_HIGHTIME + MSInfo->StcSpeed.Speed_A);
+    Task_MotorSys_Thruster_SpeedSet(B_1, STOP_PWM_HIGHTIME + MSInfo->StcSpeed.Speed_B);
+    Task_MotorSys_Thruster_SpeedSet(C_1, STOP_PWM_HIGHTIME + MSInfo->StcSpeed.Speed_C);
+    Task_MotorSys_Thruster_SpeedSet(D_1, STOP_PWM_HIGHTIME + MSInfo->StcSpeed.Speed_D);
+    Task_MotorSys_Steer_Angle_Set(A_2, MSInfo->StcAngle.Angle_A);
+    Drv_Delay_Ms(1000);
+    Task_MotorSys_Steer_Angle_Set(B_2, MSInfo->StcAngle.Angle_B);
+    Drv_Delay_Ms(1000);
+    Task_MotorSys_Steer_Angle_Set(C_2, MSInfo->StcAngle.Angle_C);
+    Drv_Delay_Ms(1000);
+    Task_MotorSys_Steer_Angle_Set(D_2, MSInfo->StcAngle.Angle_D);
 }

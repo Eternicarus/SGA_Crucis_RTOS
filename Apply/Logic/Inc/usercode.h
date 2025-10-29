@@ -23,5 +23,6 @@ extern rt_thread_t IMX6ULLThread_t;
 extern rt_thread_t DS1337Thread_t;
 extern rt_thread_t AutoModeThread_t;
 extern rt_thread_t HandleModeThread_t;
+extern rt_thread_t MotorSysThread_t;
 
 #endif

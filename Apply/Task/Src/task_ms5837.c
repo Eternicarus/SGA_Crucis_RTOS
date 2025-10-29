@@ -1,6 +1,5 @@
 #include "task_ms5837.h"
 
-MotorSysInfo MSInfo;
 volatile int16_t TargetDepth = 0; // 目标深度
 
 /**
@@ -9,7 +8,7 @@ volatile int16_t TargetDepth = 0; // 目标深度
  */
 void Task_MS5837_Handle(void)
 {
-    MotorSysInfo MSInfo;
+    // MotorSysInfo MSInfo;
 
     OCD_MS5837_GetData(&MS5837);
     if(MS5837.fDepth == 153150.250000)  //未接MS5837的错误数据

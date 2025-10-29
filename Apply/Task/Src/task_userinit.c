@@ -10,7 +10,7 @@ void Task_UserInit(void)
 	Drv_GPIO_Init(LED, 3);
 
 	Drv_GPIO_Init(&SYNC,1);			/* 初始化AD4111的SYNC引脚 */
-    
+
     Drv_Uart_DMAInit(&Uart1);       /* 初始化串口1 DAP接口 有线RS232接口 */
     OCD_JY901_DMAInit(&JY901S);     /* 初始化JY901S 使用串口2 */
     Drv_Uart_DMAInit(&Uart3);       /* 初始化串口3 无线电台 */
@@ -31,8 +31,8 @@ void Task_UserInit(void)
 		while(1);  //程序报错stop	
 	}
     
-    Task_MotorSys_Init();       /* 初始化电机系统 */
-    
     if(OCD_MS5837_Init(&MS5837) == 0)	/* 初始化MS5837 */
         printf("MS5837 error\r\n");
+
+    Task_MotorSys_Init();       /* 初始化电机系统 */
 }

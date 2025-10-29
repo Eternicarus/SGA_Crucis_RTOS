@@ -73,6 +73,8 @@
 .\objects\task_jy901.o: ..\Bsp\OCD\Inc\ocd_jy901.h
 .\objects\task_jy901.o: ..\Bsp\OCD\Inc\ocd_ds3231.h
 .\objects\task_jy901.o: ..\Bsp\Algo\Inc\algo_conf.h
+.\objects\task_jy901.o: ..\Bsp\Algo\Inc\algo_pid.h
 .\objects\task_jy901.o: ..\Bsp\Dev\Inc\dev_conf.h
 .\objects\task_jy901.o: ..\Apply\Logic\Inc\usercode.h
 .\objects\task_jy901.o: ..\Apply\Task\Inc\task_reportdata.h
+.\objects\task_jy901.o: ..\Apply\Task\Inc\task_motorsys.h
