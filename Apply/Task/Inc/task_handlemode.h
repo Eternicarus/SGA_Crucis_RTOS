@@ -15,10 +15,10 @@ typedef struct
 {
     uint8_t ModeChange;             //模式切换标志
     float JoystickInfo[2];          //存放手柄数据
-	uint8_t key;					//存放手柄按键编号
+	int8_t key;					//存放手柄按键编号
     bool keyPressed;
 }HandleModeInfo;
 
-void Task_HandleMode_Process(HandleModeInfo *HMInfo,MotorSysInfo *MSInfo);
+void Task_HandleMode_Process(HandleModeInfo *HMInfo);
 
 #endif

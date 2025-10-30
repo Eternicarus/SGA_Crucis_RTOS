@@ -6,7 +6,6 @@
 #include "dev_conf.h"		/* Dev层头文件配置 */
 #include "algo_conf.h"		/* Algo层头文件配置 */
 #include "config.h"			/* I/O配置头文件配置 */
-MotorSysInfo MSInfo = {0};   // 初始化一次
 
 /* 线程入口函数（使用裸机忽略此文件） */
 /* 自动线程 */
@@ -56,10 +55,11 @@ void HandleModeThread(void* paramenter)
 {
     HandleModeInfo HMInfo;
     AutoModeInfo ClearBuf;
+    // MotorSysInfo MSInfo;
 
     while(1)
     {
-        if(rt_mq_recv(HandleModemq,&HMInfo,sizeof(HandleModeInfo),RT_WAITING_NO) == RT_EOK)
+        if(rt_mq_recv(HandleModemq,&HMInfo,sizeof(HandleModeInfo),RT_WAITING_FOREVER) == RT_EOK)
         {
             //手柄控制消息队列接收到数据，将切换到自动模式
             if(HMInfo.ModeChange)
@@ -79,12 +79,8 @@ void HandleModeThread(void* paramenter)
                 rt_exit_critical();                     //调度器解锁
                 rt_schedule();                          //立即执行一次调度
             }
+            Task_HandleMode_Process(&HMInfo);
         }
-        
-        // printf("HandleMode\r\n");
-        Task_HandleMode_Process(&HMInfo,&MSInfo);
-        Drv_Delay_Ms(500);  //执行时间与上位机手柄发送一帧数据时间相同
-        rt_thread_yield();
     }
 }
 
@@ -169,11 +165,14 @@ void DS1337Thread(void* paramenter)
 /* 电机控制线程 */
 void MotorSysThread(void* paramenter)
 {
-    // MotorSysInfo MSInfo = {0};   // 初始化一次
-    printf("MotorSysThread Start\r\n");
+    MotorSysInfo MSInfo;
     while(1)
     {
-        Task_MotorSys_Handle(&MSInfo);
-        Drv_Delay_Ms(1000);
+        if(rt_mq_recv(MotorSysmq,&MSInfo,sizeof(MotorSysInfo),rt_tick_from_millisecond(20)) == RT_EOK)
+        {
+            //收到电机控制消息
+            Task_MotorSys_Handle(&MSInfo);
+        }
+        // Drv_Delay_Ms(100);
     }
 }

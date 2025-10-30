@@ -5,7 +5,7 @@
 /* 外设初始化函数 */
 void Task_UserInit(void)
 {
-    uint8_t ret = 0;
+    static uint8_t ret = 0;
 
 	Drv_GPIO_Init(LED, 3);
 

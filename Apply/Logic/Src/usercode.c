@@ -26,6 +26,7 @@ rt_sem_t CmdFromIPC_Sem = RT_NULL;		//上位机命令信号量
 /*消息队列句柄*/
 rt_mq_t AutoModemq = RT_NULL;		//自动模式消息队列
 rt_mq_t HandleModemq = RT_NULL;		//手动模式消息队列
+rt_mq_t MotorSysmq = RT_NULL;		//电机系统消息队列
 
 /* 用户逻辑代码 */
 void UserLogic_Code(void)
@@ -35,8 +36,9 @@ void UserLogic_Code(void)
 	CmdFromIPC_Sem = rt_sem_create("CmdFromIPC_Sem",0,RT_IPC_FLAG_FIFO);
 
 	/* 创建消息队列 */
-	AutoModemq = rt_mq_create("AutoModemq",50,50,RT_IPC_FLAG_FIFO);
-	HandleModemq = rt_mq_create("HandleModemq",50,50,RT_IPC_FLAG_FIFO);
+	AutoModemq = rt_mq_create("AutoModemq",sizeof(AutoModeInfo),20,RT_IPC_FLAG_FIFO);
+	HandleModemq = rt_mq_create("HandleModemq",sizeof(HandleModeInfo),20,RT_IPC_FLAG_FIFO);
+	MotorSysmq = rt_mq_create("MotorSysmq",sizeof(MotorSysInfo),20,RT_IPC_FLAG_FIFO);
 
 	/* 创建线程 */
 	TestThread_t 		= rt_thread_create("DataFromIPC",TestThread,NULL,1024,15,20);

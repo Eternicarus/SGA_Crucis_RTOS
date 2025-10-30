@@ -106,13 +106,51 @@ void Task_MotorSys_AllThruster_Stop(void)
 */
 void Task_MotorSys_Steer_Angle_Set(uint8_t index, uint8_t ang)
 {
+    float now_pulse = 0.0;
     // 添加角度范围保护
     if(ang > 180) ang = 180;
     
     // 使用浮点数确保精度
     float pulse_us = 500.0f + (ang / 180.0f) * 2000.0f;
-    
-    Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)pulse_us);
+
+    switch(PWM[index].ucChannel)
+		{
+			case TIM_CHANNEL_1:
+				now_pulse = PWM[index].tPWMHandle.Instance->CCR1;
+			break;
+			
+			case TIM_CHANNEL_2:
+				now_pulse = PWM[index].tPWMHandle.Instance->CCR2;
+			break;
+			
+			case TIM_CHANNEL_3:
+				now_pulse = PWM[index].tPWMHandle.Instance->CCR3;
+			break;
+			
+			case TIM_CHANNEL_4:
+				now_pulse = PWM[index].tPWMHandle.Instance->CCR4;
+			break;
+			
+			default:
+				Drv_HAL_Error(__FILE__, __LINE__);
+			break;
+		}
+        // printf("now_pulse_start: %f\r\n", now_pulse);
+    while(now_pulse < pulse_us)
+    {
+        now_pulse += 5;
+        Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)now_pulse);
+        // printf("now_pulse: %f\r\n", now_pulse);
+        Drv_Delay_Ms(1);
+    }
+    while(now_pulse > pulse_us)
+    {
+        now_pulse -= 5;
+        Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)now_pulse);
+        // printf("now_pulse: %f\r\n", now_pulse);
+        Drv_Delay_Ms(1);
+    }
+    // Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)pulse_us);
 }
 
 /**
@@ -278,10 +316,7 @@ void Task_MotorSys_Handle(MotorSysInfo *MSInfo)
     Task_MotorSys_Thruster_SpeedSet(C_1, STOP_PWM_HIGHTIME + MSInfo->StcSpeed.Speed_C);
     Task_MotorSys_Thruster_SpeedSet(D_1, STOP_PWM_HIGHTIME + MSInfo->StcSpeed.Speed_D);
     Task_MotorSys_Steer_Angle_Set(A_2, MSInfo->StcAngle.Angle_A);
-    Drv_Delay_Ms(1000);
     Task_MotorSys_Steer_Angle_Set(B_2, MSInfo->StcAngle.Angle_B);
-    Drv_Delay_Ms(1000);
     Task_MotorSys_Steer_Angle_Set(C_2, MSInfo->StcAngle.Angle_C);
-    Drv_Delay_Ms(1000);
     Task_MotorSys_Steer_Angle_Set(D_2, MSInfo->StcAngle.Angle_D);
 }

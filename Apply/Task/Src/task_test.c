@@ -135,41 +135,59 @@ static void S_Test_DS1337_Function(void)
  */
 static void S_Test_Motorsys_Function(void)
 {
+    printf("angle = 0\r\n");
+    Task_MotorSys_Steer_Angle_Set(A_2, 0);
+    Task_MotorSys_Steer_Angle_Set(B_2, 0);
+    Task_MotorSys_Steer_Angle_Set(C_2, 0);
+    Task_MotorSys_Steer_Angle_Set(D_2, 0);
+    Drv_Delay_Ms(3000);
+    printf("angle = 90\r\n");
+    Task_MotorSys_Steer_Angle_Set(A_2, 90);
+    Task_MotorSys_Steer_Angle_Set(B_2, 90);
+    Task_MotorSys_Steer_Angle_Set(C_2, 90);
+    Task_MotorSys_Steer_Angle_Set(D_2, 90);
+    Drv_Delay_Ms(3000);
+    printf("angle = 180\r\n");
+    Task_MotorSys_Steer_Angle_Set(A_2, 180);
+    Task_MotorSys_Steer_Angle_Set(B_2, 180);
+    Task_MotorSys_Steer_Angle_Set(C_2, 180);
+    Task_MotorSys_Steer_Angle_Set(D_2, 180);
+    Drv_Delay_Ms(3000);
     //测试舵机角度
-    uint16_t angle;
-    printf("0\r\n");
-    Drv_Delay_Ms(5000);
-    for(angle = 0; angle < 180; angle += 10)
-    {
-        Task_MotorSys_Steer_Angle_Set(A_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(B_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(C_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(D_2,angle);
-        Drv_Delay_Ms(200);
+    // uint16_t angle;
+    // printf("0\r\n");
+    // Drv_Delay_Ms(5000);
+    // for(angle = 0; angle < 180; angle += 10)
+    // {
+    //     Task_MotorSys_Steer_Angle_Set(A_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(B_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(C_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(D_2,angle);
+    //     Drv_Delay_Ms(200);
 
-    }
-    printf("180\r\n");
-    Drv_Delay_Ms(5000);
-    for(angle = 180; angle < 360; angle += 10)
-    {
-        Task_MotorSys_Steer_Angle_Set(A_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(B_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(C_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(D_2,angle);
-        Drv_Delay_Ms(200);
-    }
-    printf("360\r\n");
-    Drv_Delay_Ms(5000);
-    for(angle = 360; angle > 0; angle -= 10)
-    {
-        Task_MotorSys_Steer_Angle_Set(A_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(B_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(C_2,angle);
-        // Task_MotorSys_Steer_Angle_Set(D_2,angle);
-        Drv_Delay_Ms(200);
-    }
-    printf("0\r\n");
-    Drv_Delay_Ms(5000);
+    // }
+    // printf("180\r\n");
+    // Drv_Delay_Ms(5000);
+    // for(angle = 180; angle < 360; angle += 10)
+    // {
+    //     Task_MotorSys_Steer_Angle_Set(A_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(B_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(C_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(D_2,angle);
+    //     Drv_Delay_Ms(200);
+    // }
+    // printf("360\r\n");
+    // Drv_Delay_Ms(5000);
+    // for(angle = 360; angle > 0; angle -= 10)
+    // {
+    //     Task_MotorSys_Steer_Angle_Set(A_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(B_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(C_2,angle);
+    //     // Task_MotorSys_Steer_Angle_Set(D_2,angle);
+    //     Drv_Delay_Ms(200);
+    // }
+    // printf("0\r\n");
+    // Drv_Delay_Ms(5000);
     //测试推进器转动
 //    Task_MotorSys_Thruster_SpeedSet(A_1,1550);
 //    Drv_Delay_Ms(2000);
@@ -245,7 +263,7 @@ static void S_Test_Motorsys_Function(void)
  */
 void Task_Test_Handle(void)
 {
-    S_Test_Uart3_Function();
+    // S_Test_Uart3_Function();
 
     // S_Test_AD4111_Function();
 
@@ -255,7 +273,7 @@ void Task_Test_Handle(void)
 
     // S_Test_DS1337_Function();
 
-//    S_Test_Motorsys_Function();
+   S_Test_Motorsys_Function();
 	printf("run\r\n");
 	Drv_Delay_Ms(1000);
 }

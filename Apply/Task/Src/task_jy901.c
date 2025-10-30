@@ -69,6 +69,7 @@ void Task_JY901_Handle(void)
             // MSInfo.StcStatus.YawSys   = MSAlgo_PID_Calculate(&YawPID,  JY901S.stcAngle.ConYaw,   TargetYaw);
             // MSInfo.StcStatus.PitchSys = MSAlgo_PID_Calculate(&PitchPID,JY901S.stcAngle.ConPitch, TargetPitch);
             // MSInfo.StcStatus.RollSys  = MSAlgo_PID_Calculate(&RollPID, JY901S.stcAngle.ConRoll,  TargetRoll);
+            // rt_mq_send(MotorSysmq,&MSInfo,sizeof(MotorSysInfo));
         }
 	}
 }
