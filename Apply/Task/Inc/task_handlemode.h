@@ -10,6 +10,9 @@
 #define SPEED_YAW    40
 #define SPEED_DEPTH  40
 
+// #define DEPTH_STEP 10
+// #define YAW_STEP 10
+
 /* 手动模式信息结构体 */
 typedef struct 
 {

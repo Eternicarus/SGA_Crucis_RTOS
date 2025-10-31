@@ -83,10 +83,10 @@
 .\objects\usercode.o: ..\Apply\Task\Inc\task_ad4111.h
 .\objects\usercode.o: ..\Apply\Task\Inc\task_reportdata.h
 .\objects\usercode.o: ..\Apply\Task\Inc\task_motorsys.h
+.\objects\usercode.o: ..\Apply\Task\Inc\task_conf.h
 .\objects\usercode.o: ..\Apply\Task\Inc\task_jy901.h
 .\objects\usercode.o: ..\Apply\Task\Inc\task_ms5837.h
 .\objects\usercode.o: ..\Apply\Task\Inc\task_ipccmd.h
-.\objects\usercode.o: ..\Apply\Task\Inc\task_conf.h
 .\objects\usercode.o: ..\Apply\Task\Inc\task_imx6ull.h
 .\objects\usercode.o: ..\Apply\Task\Inc\task_ds1337.h
 .\objects\usercode.o: ..\Apply\Task\Inc\task_automode.h

@@ -22,11 +22,16 @@ rt_thread_t MotorSysThread_t = RT_NULL;
 /* 信号量句柄 */
 rt_sem_t JY901S_Sem = RT_NULL;			//JY901S数据信号量
 rt_sem_t CmdFromIPC_Sem = RT_NULL;		//上位机命令信号量
+rt_sem_t MotorSys_Sem = RT_NULL;		//电机系统信号量
+
+/* 互斥锁句柄 */
+rt_mutex_t Depth_Mutex = RT_NULL;		//深度数据互斥锁
+rt_mutex_t Orientation_Mutex = RT_NULL;	//姿态数据互斥锁
+rt_mutex_t Handle_Mutex = RT_NULL;		//手柄数据互斥锁
 
 /*消息队列句柄*/
 rt_mq_t AutoModemq = RT_NULL;		//自动模式消息队列
 rt_mq_t HandleModemq = RT_NULL;		//手动模式消息队列
-rt_mq_t MotorSysmq = RT_NULL;		//电机系统消息队列
 
 /* 用户逻辑代码 */
 void UserLogic_Code(void)
@@ -34,30 +39,34 @@ void UserLogic_Code(void)
 	/* 创建信号量 */
 	JY901S_Sem = rt_sem_create("JY901Sem",0,RT_IPC_FLAG_FIFO);
 	CmdFromIPC_Sem = rt_sem_create("CmdFromIPC_Sem",0,RT_IPC_FLAG_FIFO);
+	MotorSys_Sem = rt_sem_create("MotorSys_Sem",0,RT_IPC_FLAG_FIFO);
+
+	/* 创建互斥锁 */
+	Depth_Mutex = rt_mutex_create("Depth_Mutex",RT_IPC_FLAG_FIFO);
+	Orientation_Mutex = rt_mutex_create("Orientation_Mutex",RT_IPC_FLAG_FIFO);
+	Handle_Mutex = rt_mutex_create("Handle_Mutex",RT_IPC_FLAG_FIFO);
 
 	/* 创建消息队列 */
 	AutoModemq = rt_mq_create("AutoModemq",sizeof(AutoModeInfo),20,RT_IPC_FLAG_FIFO);
 	HandleModemq = rt_mq_create("HandleModemq",sizeof(HandleModeInfo),20,RT_IPC_FLAG_FIFO);
-	MotorSysmq = rt_mq_create("MotorSysmq",sizeof(MotorSysInfo),20,RT_IPC_FLAG_FIFO);
 
 	/* 创建线程 */
+	/* 电机线程优先级一定要高于另外三个写入线程 */
 	TestThread_t 		= rt_thread_create("DataFromIPC",TestThread,NULL,1024,15,20);
-	ReportDataThread_t  = rt_thread_create("ReportDataThread",ReportDataThread,NULL,512,2,20);
-	JY901Thread_t 		= rt_thread_create("JY901Thread",JY901Thread,NULL,512,7,20);
-	MS5837Thread_t 		= rt_thread_create("MS5837Thread",MS5837Thread,NULL,512,8,20);
+	ReportDataThread_t  = rt_thread_create("ReportDataThread",ReportDataThread,NULL,512,10,20);
+	JY901Thread_t 		= rt_thread_create("JY901Thread",JY901Thread,NULL,512,6,20);
+	MS5837Thread_t 		= rt_thread_create("MS5837Thread",MS5837Thread,NULL,512,6,20);
 	AD4111Thread_t 		= rt_thread_create("AD4111Thread",AD4111Thread,NULL,512,8,20);
-	IPCcmdThread_t 		= rt_thread_create("IPCcmdThread",IPCcmdThread,NULL,512,1,20);
-	IMX6ULLThread_t 	= rt_thread_create("IMX6ULLThread",IMX6ULLThread,NULL,1024,4,20);
+	IPCcmdThread_t 		= rt_thread_create("IPCcmdThread",IPCcmdThread,NULL,512,3,20);
+	IMX6ULLThread_t 	= rt_thread_create("IMX6ULLThread",IMX6ULLThread,NULL,1024,3,20);
 	DS1337Thread_t 		= rt_thread_create("DS1337Thread",DS1337Thread,NULL,512,9,20);
 	HandleModeThread_t 	= rt_thread_create("HandleModeThread",HandleModeThread,NULL,512,5,20);
 	AutoModeThread_t 	= rt_thread_create("AutoModeThread",AutoModeThread,NULL,512,5,20);
-	MotorSysThread_t	= rt_thread_create("MotorSysThread",MotorSysThread,NULL,512,6,20);
-
+	MotorSysThread_t	= rt_thread_create("MotorSysThread",MotorSysThread,NULL,512,4,20);
 // #define TEST
 
 #ifdef TEST
 	rt_thread_startup(TestThread_t);			//测试线程
-
 #else
 	rt_thread_startup(ReportDataThread_t);		//报告数据线程
 	rt_thread_startup(JY901Thread_t);			//JY901线程

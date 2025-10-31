@@ -2,6 +2,7 @@
 #define __TASK_AUTOMODE_H_
 
 #include "drv_hal_conf.h"
+#include "task_conf.h"
 
 /* 自动模式信息结构体 */
 typedef struct 

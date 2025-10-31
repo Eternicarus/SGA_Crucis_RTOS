@@ -4,7 +4,7 @@
 #include "drv_hal_conf.h"
 #include "config.h"
 #include "usercode.h"
-
+#include "task_conf.h"
 
 #define STOP_PWM_HIGHTIME 1500                          // 推进器高电平时间1.5ms停转
 #define RAD2DEG (180.0f / 3.14159265358979323846f)      // 弧度转角度
@@ -44,6 +44,8 @@ typedef struct
     AngleInfo StcAngle;
     StatusInfo StcStatus;
 }MotorSysInfo;
+
+extern MotorSysInfo MSInfo;
 
 void Task_MotorSys_Init(void);
 void Task_MotorSys_Thruster_SpeedSet(uint8_t index,uint16_t _highTime);

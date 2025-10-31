@@ -6,7 +6,7 @@
 #include "dev_conf.h"		/* Dev层头文件配置 */
 #include "algo_conf.h"		/* Algo层头文件配置 */
 #include "config.h"			/* I/O配置头文件配置 */
-
+MotorSysInfo MSInfo = {0};  // 电机系统信息结构体实例
 /* 线程入口函数（使用裸机忽略此文件） */
 /* 自动线程 */
 void AutoModeThread(void* paramenter)
@@ -79,7 +79,10 @@ void HandleModeThread(void* paramenter)
                 rt_exit_critical();                     //调度器解锁
                 rt_schedule();                          //立即执行一次调度
             }
+
+            rt_mutex_take(Handle_Mutex,RT_WAITING_FOREVER);
             Task_HandleMode_Process(&HMInfo);
+            rt_mutex_release(Handle_Mutex);
         }
     }
 }
@@ -106,7 +109,9 @@ void JY901Thread(void* paramenter)
 {
     while(1)
     {
+        rt_mutex_take(Orientation_Mutex,RT_WAITING_FOREVER);
         Task_JY901_Handle();
+        rt_mutex_release(Orientation_Mutex);
         Drv_Delay_Ms(400);
     }
 }
@@ -116,7 +121,9 @@ void MS5837Thread(void* paramenter)
 {
     while(1)
     {
+        rt_mutex_take(Depth_Mutex,RT_WAITING_FOREVER);
         Task_MS5837_Handle();
+        rt_mutex_release(Depth_Mutex);
         Drv_Delay_Ms(600);
     }    
 }
@@ -165,13 +172,20 @@ void DS1337Thread(void* paramenter)
 /* 电机控制线程 */
 void MotorSysThread(void* paramenter)
 {
-    MotorSysInfo MSInfo;
     while(1)
     {
-        if(rt_mq_recv(MotorSysmq,&MSInfo,sizeof(MotorSysInfo),rt_tick_from_millisecond(20)) == RT_EOK)
+        if(rt_sem_take(MotorSys_Sem,RT_WAITING_FOREVER) == RT_EOK)
         {
+            rt_mutex_take(Depth_Mutex,RT_WAITING_FOREVER);
+            rt_mutex_take(Orientation_Mutex,RT_WAITING_FOREVER);
+            rt_mutex_take(Handle_Mutex,RT_WAITING_FOREVER);
+
             //收到电机控制消息
             Task_MotorSys_Handle(&MSInfo);
+
+            rt_mutex_release(Handle_Mutex);
+            rt_mutex_release(Orientation_Mutex);
+            rt_mutex_release(Depth_Mutex);
         }
         // Drv_Delay_Ms(100);
     }

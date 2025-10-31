@@ -67,9 +67,9 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5475F300)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (..\Apply\Task\Inc\task_userinit.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
-F (..\Apply\Logic\Src\usercode.c)(0x69036D49)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\usercode.o --omf_browse .\objects\usercode.crf --depend .\objects\usercode.d)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
+F (..\Apply\Logic\Src\usercode.c)(0x6904908F)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\usercode.o --omf_browse .\objects\usercode.crf --depend .\objects\usercode.d)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
 I (..\Bsp\RTOS\RT-Thread\include\rtconfig.h)(0x6731B64C)
@@ -150,15 +150,15 @@ I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
-I (..\Apply\Task\Inc\task_jy901.h)(0x6903639C)
-I (..\Apply\Task\Inc\task_ms5837.h)(0x6903639C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
 I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
 I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_automode.h)(0x67E3C003)
-I (..\Apply\Task\Inc\task_handlemode.h)(0x6903656E)
-F (..\Apply\Logic\Src\config.c)(0x690200CC)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\config.o --omf_browse .\objects\config.crf --depend .\objects\config.d)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
+F (..\Apply\Logic\Src\config.c)(0x690499CC)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\config.o --omf_browse .\objects\config.crf --depend .\objects\config.d)
 I (..\Apply\Logic\Inc\config.h)(0x68FF83C1)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
@@ -232,8 +232,8 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-F (..\Apply\Logic\Src\threadpool.c)(0x69036DB1)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\threadpool.o --omf_browse .\objects\threadpool.crf --depend .\objects\threadpool.d)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+F (..\Apply\Logic\Src\threadpool.c)(0x6904908F)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\threadpool.o --omf_browse .\objects\threadpool.crf --depend .\objects\threadpool.d)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
 I (..\Bsp\RTOS\RT-Thread\include\rtconfig.h)(0x6731B64C)
@@ -314,14 +314,14 @@ I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
-I (..\Apply\Task\Inc\task_jy901.h)(0x6903639C)
-I (..\Apply\Task\Inc\task_ms5837.h)(0x6903639C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
 I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
 I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_automode.h)(0x67E3C003)
-I (..\Apply\Task\Inc\task_handlemode.h)(0x6903656E)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 F (..\Apply\Task\Src\task_irq.c)(0x69020C8F)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_irq.o --omf_browse .\objects\task_irq.crf --depend .\objects\task_irq.d)
 I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
 I (..\Driver\Inc\drv_hal.h)(0x6731B64C)
@@ -402,16 +402,16 @@ I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
-I (..\Apply\Task\Inc\task_jy901.h)(0x6903639C)
-I (..\Apply\Task\Inc\task_ms5837.h)(0x6903639C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
 I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
 I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_automode.h)(0x67E3C003)
-I (..\Apply\Task\Inc\task_handlemode.h)(0x6903656E)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 F (..\Apply\Task\Src\task_sysinit.c)(0x6731B64C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_sysinit.o --omf_browse .\objects\task_sysinit.crf --depend .\objects\task_sysinit.d)
 I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
 I (..\Driver\Inc\drv_hal.h)(0x6731B64C)
@@ -492,16 +492,16 @@ I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
-I (..\Apply\Task\Inc\task_jy901.h)(0x6903639C)
-I (..\Apply\Task\Inc\task_ms5837.h)(0x6903639C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
 I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
 I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_automode.h)(0x67E3C003)
-I (..\Apply\Task\Inc\task_handlemode.h)(0x6903656E)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 F (..\Apply\Task\Src\task_userinit.c)(0x6903639C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_userinit.o --omf_browse .\objects\task_userinit.crf --depend .\objects\task_userinit.d)
 I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
 I (..\Driver\Inc\drv_hal.h)(0x6731B64C)
@@ -582,16 +582,16 @@ I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
-I (..\Apply\Task\Inc\task_jy901.h)(0x6903639C)
-I (..\Apply\Task\Inc\task_ms5837.h)(0x6903639C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
 I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
 I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_automode.h)(0x67E3C003)
-I (..\Apply\Task\Inc\task_handlemode.h)(0x6903656E)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 F (..\Apply\Task\Src\task_test.c)(0x69036713)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_test.o --omf_browse .\objects\task_test.crf --depend .\objects\task_test.d)
 I (..\Apply\Task\Inc\task_test.h)(0x674D665B)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
@@ -668,9 +668,20 @@ I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
+I (..\Apply\Task\Inc\task_irq.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_sysinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_userinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
+I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
+I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 F (..\Apply\Task\Src\task_reportdata.c)(0x69020F49)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_reportdata.o --omf_browse .\objects\task_reportdata.crf --depend .\objects\task_reportdata.d)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
@@ -746,8 +757,8 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-F (..\Apply\Task\Src\task_jy901.c)(0x6903639C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_jy901.o --omf_browse .\objects\task_jy901.crf --depend .\objects\task_jy901.d)
-I (..\Apply\Task\Inc\task_jy901.h)(0x6903639C)
+F (..\Apply\Task\Src\task_jy901.c)(0x69049264)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_jy901.o --omf_browse .\objects\task_jy901.crf --depend .\objects\task_jy901.d)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
 I (..\Bsp\RTOS\RT-Thread\include\rtconfig.h)(0x6731B64C)
@@ -821,11 +832,23 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
+I (..\Apply\Task\Inc\task_irq.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_sysinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_userinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_test.h)(0x674D665B)
+I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
-F (..\Apply\Task\Src\task_ms5837.c)(0x6903639C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_ms5837.o --omf_browse .\objects\task_ms5837.crf --depend .\objects\task_ms5837.d)
-I (..\Apply\Task\Inc\task_ms5837.h)(0x6903639C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
+I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
+I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
+F (..\Apply\Task\Src\task_ms5837.c)(0x690498DB)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_ms5837.o --omf_browse .\objects\task_ms5837.crf --depend .\objects\task_ms5837.d)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
 I (..\Bsp\RTOS\RT-Thread\include\rtconfig.h)(0x6731B64C)
@@ -899,9 +922,21 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
+I (..\Apply\Task\Inc\task_irq.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_sysinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_userinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_test.h)(0x674D665B)
+I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
+I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 F (..\Apply\Task\Src\task_ad4111.c)(0x6731B64C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_ad4111.o --omf_browse .\objects\task_ad4111.crf --depend .\objects\task_ad4111.d)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
@@ -977,9 +1012,9 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-F (..\Apply\Task\Src\task_ipccmd.c)(0x686A428C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_ipccmd.o --omf_browse .\objects\task_ipccmd.crf --depend .\objects\task_ipccmd.d)
+F (..\Apply\Task\Src\task_ipccmd.c)(0x69049264)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_ipccmd.o --omf_browse .\objects\task_ipccmd.crf --depend .\objects\task_ipccmd.d)
 I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
@@ -1054,7 +1089,7 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
 I (..\Apply\Task\Inc\task_irq.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_sysinit.h)(0x6731B64C)
@@ -1062,13 +1097,13 @@ I (..\Apply\Task\Inc\task_userinit.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_test.h)(0x674D665B)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
-I (..\Apply\Task\Inc\task_jy901.h)(0x6903639C)
-I (..\Apply\Task\Inc\task_ms5837.h)(0x6903639C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
 I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_automode.h)(0x67E3C003)
-I (..\Apply\Task\Inc\task_handlemode.h)(0x6903656E)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 F (..\Apply\Task\Src\task_imx6ull.c)(0x6731B64C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_imx6ull.o --omf_browse .\objects\task_imx6ull.crf --depend .\objects\task_imx6ull.d)
 I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
@@ -1144,7 +1179,7 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
 F (..\Apply\Task\Src\task_ds1337.c)(0x6731B64C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_ds1337.o --omf_browse .\objects\task_ds1337.crf --depend .\objects\task_ds1337.d)
 I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
@@ -1221,10 +1256,10 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
 F (..\Apply\Task\Src\task_automode.c)(0x67E4D800)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_automode.o --omf_browse .\objects\task_automode.crf --depend .\objects\task_automode.d)
-I (..\Apply\Task\Inc\task_automode.h)(0x67E3C003)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
 I (..\Bsp\RTOS\RT-Thread\include\rtconfig.h)(0x6731B64C)
@@ -1289,8 +1324,32 @@ I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5475F300)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5475F2FE)
-F (..\Apply\Task\Src\task_handlemode.c)(0x69036FBC)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_handlemode.o --omf_browse .\objects\task_handlemode.crf --depend .\objects\task_handlemode.d)
-I (..\Apply\Task\Inc\task_handlemode.h)(0x6903656E)
+I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
+I (..\Apply\Task\Inc\task_irq.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_sysinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_userinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_test.h)(0x674D665B)
+I (..\Apply\Logic\Inc\config.h)(0x68FF83C1)
+I (..\Bsp\OCD\Inc\ocd_conf.h)(0x6731B64C)
+I (..\Bsp\OCD\Inc\ocd_ms5837.h)(0x6731B64C)
+I (..\Bsp\OCD\Inc\ocd_ad24bit.h)(0x6731B64C)
+I (..\Bsp\OCD\Inc\ocd_jy901.h)(0x6731B64C)
+I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
+I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
+I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
+I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
+I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
+I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
+F (..\Apply\Task\Src\task_handlemode.c)(0x690497C1)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_handlemode.o --omf_browse .\objects\task_handlemode.crf --depend .\objects\task_handlemode.d)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
 I (..\Bsp\RTOS\RT-Thread\include\rtconfig.h)(0x6731B64C)
@@ -1364,7 +1423,7 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
 I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
 I (..\Apply\Task\Inc\task_irq.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_sysinit.h)(0x6731B64C)
@@ -1372,15 +1431,15 @@ I (..\Apply\Task\Inc\task_userinit.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_test.h)(0x674D665B)
 I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
-I (..\Apply\Task\Inc\task_jy901.h)(0x6903639C)
-I (..\Apply\Task\Inc\task_ms5837.h)(0x6903639C)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
 I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
 I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
 I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
-I (..\Apply\Task\Inc\task_automode.h)(0x67E3C003)
-F (..\Apply\Task\Src\task_motorsys.c)(0x69036DB1)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_motorsys.o --omf_browse .\objects\task_motorsys.crf --depend .\objects\task_motorsys.d)
-I (..\Apply\Task\Inc\task_motorsys.h)(0x69021FD2)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+F (..\Apply\Task\Src\task_motorsys.c)(0x690499CC)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\task_motorsys.o --omf_browse .\objects\task_motorsys.crf --depend .\objects\task_motorsys.d)
+I (..\Apply\Task\Inc\task_motorsys.h)(0x69049264)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)
 I (..\Bsp\RTOS\RT-Thread\include\rtthread.h)(0x6731B64C)
 I (..\Bsp\RTOS\RT-Thread\include\rtconfig.h)(0x6731B64C)
@@ -1454,7 +1513,21 @@ I (..\Bsp\OCD\Inc\ocd_ds3231.h)(0x6731B64C)
 I (..\Bsp\Algo\Inc\algo_conf.h)(0x68FF83C1)
 I (..\Bsp\Algo\Inc\algo_pid.h)(0x6731B64C)
 I (..\Bsp\Dev\Inc\dev_conf.h)(0x6731B64C)
-I (..\Apply\Logic\Inc\usercode.h)(0x6903639C)
+I (..\Apply\Logic\Inc\usercode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_conf.h)(0x6746BC03)
+I (..\Apply\Task\Inc\task_irq.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_sysinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_userinit.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_test.h)(0x674D665B)
+I (..\Apply\Task\Inc\task_ad4111.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_reportdata.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_jy901.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_ms5837.h)(0x690498F9)
+I (..\Apply\Task\Inc\task_ipccmd.h)(0x690212F7)
+I (..\Apply\Task\Inc\task_imx6ull.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_ds1337.h)(0x6731B64C)
+I (..\Apply\Task\Inc\task_automode.h)(0x6904908F)
+I (..\Apply\Task\Inc\task_handlemode.h)(0x690499CC)
 F (..\Bsp\OCD\Src\ocd_ads1256.c)(0x6731B64C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Apply\Logic\Inc -I ..\Apply\Task\Inc -I ..\Bsp\OCD\Inc -I ..\Bsp\FatFs\Inc -I ..\Bsp\Algo\Inc -I ..\Bsp\Dev\Inc -I ..\Bsp\RTOS\RT-Thread\include -I ..\Bsp\RTOS\FreeRTOS\include -I ..\Bsp\RTOS\FreeRTOS\CMSIS_RTOS_V2 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM3 -I ..\Bsp\RTOS\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\Driver\Inc -I ..\Hardware\STM32F1XX\CMSIS\Include -I ..\Hardware\STM32F1XX\CMSIS\Device\ST\STM32F1xx\Include -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc -I ..\Hardware\STM32F1XX\STM32F1xx_HAL_Driver\Inc\Legacy -I ..\Hardware\STM32F4XX\CMSIS\Include -I ..\Hardware\STM32F4XX\CMSIS\Device\ST\STM32F4xx\Include -I ..\Hardware\STM32F4XX\STM32F4xx_HAL_Driver\Inc-ID:\Keil_v5\ARM\Pack\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F1_SGA_ENABLE-o .\objects\ocd_ads1256.o --omf_browse .\objects\ocd_ads1256.crf --depend .\objects\ocd_ads1256.d)
 I (..\Bsp\OCD\Inc\ocd_ads1256.h)(0x6731B64C)
 I (..\Driver\Inc\drv_hal_conf.h)(0x6901D017)

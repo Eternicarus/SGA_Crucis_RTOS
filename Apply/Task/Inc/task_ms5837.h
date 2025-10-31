@@ -4,10 +4,9 @@
 #include "drv_hal_conf.h"
 #include "config.h"
 #include "usercode.h"
-#include "task_reportdata.h"
-#include "task_motorsys.h"
+#include "task_conf.h"
 
-extern volatile int16_t TargetDepth;
+extern volatile float TargetDepth;
 
 void Task_MS5837_Handle(void);
 

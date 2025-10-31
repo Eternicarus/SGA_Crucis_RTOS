@@ -79,3 +79,17 @@
 .\objects\task_test.o: ..\Apply\Logic\Inc\usercode.h
 .\objects\task_test.o: ..\Apply\Task\Inc\task_reportdata.h
 .\objects\task_test.o: ..\Apply\Task\Inc\task_motorsys.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_conf.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_irq.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_sysinit.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_userinit.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_test.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_jy901.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_conf.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_ms5837.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_ipccmd.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_imx6ull.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_ds1337.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_automode.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_handlemode.h
+.\objects\task_test.o: ..\Apply\Task\Inc\task_motorsys.h

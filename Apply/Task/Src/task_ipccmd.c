@@ -168,49 +168,49 @@ CmdAnalysis:
             
 //不在通信协议中           
             /* 垂直运动 */
-            else if(IPC_ReceBuf[1] == 'A' && IPC_ReceBuf[2] == 'B')
-            {
-                Task_MotorSys_Steer_Angle_Set(A_2,90);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(B_2,90);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(C_2,90);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(D_2,90);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Thruster_SpeedSet(A_1,1350);
-                Task_MotorSys_Thruster_SpeedSet(B_1,1350);
-                Task_MotorSys_Thruster_SpeedSet(C_1,1350);
-                Task_MotorSys_Thruster_SpeedSet(D_1,1650);
-                Drv_Delay_Ms(10000);
-                Task_MotorSys_Thruster_SpeedSet(A_1,1500);
-                Task_MotorSys_Thruster_SpeedSet(B_1,1500);
-                Task_MotorSys_Thruster_SpeedSet(C_1,1500);
-                Task_MotorSys_Thruster_SpeedSet(D_1,1500);
-            }
-            /* 水平运动 */
-            else if(IPC_ReceBuf[1] == '1' && IPC_ReceBuf[2] == '2')
-            {
-                Task_MotorSys_Steer_Angle_Set(A_2,0);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(B_2,0);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(C_2,0);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(D_2,0);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Thruster_SpeedSet(A_1,1450);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Thruster_SpeedSet(B_1,1450);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Thruster_SpeedSet(C_1,1450);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Thruster_SpeedSet(D_1,1550);
-                Drv_Delay_Ms(10000);      
-                Task_MotorSys_Thruster_SpeedSet(A_1,1500);
-                Task_MotorSys_Thruster_SpeedSet(B_1,1500);
-                Task_MotorSys_Thruster_SpeedSet(C_1,1500);
-                Task_MotorSys_Thruster_SpeedSet(D_1,1500);   
+            // else if(IPC_ReceBuf[1] == 'A' && IPC_ReceBuf[2] == 'B')
+            // {
+            //     Task_MotorSys_Steer_Angle_Set(A_2,90);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Steer_Angle_Set(B_2,90);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Steer_Angle_Set(C_2,90);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Steer_Angle_Set(D_2,90);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Thruster_SpeedSet(A_1,1350);
+            //     Task_MotorSys_Thruster_SpeedSet(B_1,1350);
+            //     Task_MotorSys_Thruster_SpeedSet(C_1,1350);
+            //     Task_MotorSys_Thruster_SpeedSet(D_1,1650);
+            //     Drv_Delay_Ms(10000);
+            //     Task_MotorSys_Thruster_SpeedSet(A_1,1500);
+            //     Task_MotorSys_Thruster_SpeedSet(B_1,1500);
+            //     Task_MotorSys_Thruster_SpeedSet(C_1,1500);
+            //     Task_MotorSys_Thruster_SpeedSet(D_1,1500);
+            // }
+            // /* 水平运动 */
+            // else if(IPC_ReceBuf[1] == '1' && IPC_ReceBuf[2] == '2')
+            // {
+            //     Task_MotorSys_Steer_Angle_Set(A_2,0);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Steer_Angle_Set(B_2,0);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Steer_Angle_Set(C_2,0);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Steer_Angle_Set(D_2,0);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Thruster_SpeedSet(A_1,1450);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Thruster_SpeedSet(B_1,1450);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Thruster_SpeedSet(C_1,1450);
+            //     Drv_Delay_Ms(500);
+            //     Task_MotorSys_Thruster_SpeedSet(D_1,1550);
+            //     Drv_Delay_Ms(10000);      
+            //     Task_MotorSys_Thruster_SpeedSet(A_1,1500);
+            //     Task_MotorSys_Thruster_SpeedSet(B_1,1500);
+            //     Task_MotorSys_Thruster_SpeedSet(C_1,1500);
+            //     Task_MotorSys_Thruster_SpeedSet(D_1,1500);   
 
 //                Task_MotorSys_Thruster_SpeedSet(A_1,1620);
 //                Drv_Delay_Ms(2000);
@@ -224,35 +224,35 @@ CmdAnalysis:
 //                Task_MotorSys_Thruster_SpeedSet(B_1,1500);
 //                Task_MotorSys_Thruster_SpeedSet(C_1,1500);
 //                Task_MotorSys_Thruster_SpeedSet(D_1,1500);                 
-            }
-            /* 舵机垂向调整 */
-            else if(IPC_ReceBuf[1] == 'C' && IPC_ReceBuf[2] == 'D')
-            {
-				char *token;
-				token = strtok((char *)IPC_ReceBuf, " "); // 获取第一个 "@CD"
-				token = strtok(NULL, " "); // 获取舵机位置值
-				printf("%d\r\n",atoi(token));
-                Task_MotorSys_Steer_Angle_Set(A_2,atoi(token));
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(B_2,atoi(token));
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(C_2,atoi(token));
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(D_2,atoi(token));
-                Drv_Delay_Ms(500);
-            }
-            /* 舵机水平调整 */
-            else if(IPC_ReceBuf[1] == 'E' && IPC_ReceBuf[2] == 'F')
-            {
-                Task_MotorSys_Steer_Angle_Set(A_2,0);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(B_2,0);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(C_2,0);
-                Drv_Delay_Ms(500);
-                Task_MotorSys_Steer_Angle_Set(D_2,0);
-                Drv_Delay_Ms(500);
-            }
+        //     }
+        //     /* 舵机垂向调整 */
+        //     else if(IPC_ReceBuf[1] == 'C' && IPC_ReceBuf[2] == 'D')
+        //     {
+		// 		char *token;
+		// 		token = strtok((char *)IPC_ReceBuf, " "); // 获取第一个 "@CD"
+		// 		token = strtok(NULL, " "); // 获取舵机位置值
+		// 		printf("%d\r\n",atoi(token));
+        //         Task_MotorSys_Steer_Angle_Set(A_2,atoi(token));
+        //         Drv_Delay_Ms(500);
+        //         Task_MotorSys_Steer_Angle_Set(B_2,atoi(token));
+        //         Drv_Delay_Ms(500);
+        //         Task_MotorSys_Steer_Angle_Set(C_2,atoi(token));
+        //         Drv_Delay_Ms(500);
+        //         Task_MotorSys_Steer_Angle_Set(D_2,atoi(token));
+        //         Drv_Delay_Ms(500);
+        //     }
+        //     /* 舵机水平调整 */
+        //     else if(IPC_ReceBuf[1] == 'E' && IPC_ReceBuf[2] == 'F')
+        //     {
+        //         Task_MotorSys_Steer_Angle_Set(A_2,0);
+        //         Drv_Delay_Ms(500);
+        //         Task_MotorSys_Steer_Angle_Set(B_2,0);
+        //         Drv_Delay_Ms(500);
+        //         Task_MotorSys_Steer_Angle_Set(C_2,0);
+        //         Drv_Delay_Ms(500);
+        //         Task_MotorSys_Steer_Angle_Set(D_2,0);
+        //         Drv_Delay_Ms(500);
+        //     }
         }
 //不在通信协议中      
 

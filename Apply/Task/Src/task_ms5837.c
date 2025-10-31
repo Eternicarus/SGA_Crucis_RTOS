@@ -1,6 +1,6 @@
 #include "task_ms5837.h"
 
-volatile int16_t TargetDepth = 0; // 目标深度
+volatile float TargetDepth = 0.0f; // 目标深度
 
 /**
  * @brief MS5837处理函数
@@ -19,8 +19,9 @@ void Task_MS5837_Handle(void)
     memcpy(&ReportDataBuffer[DEPTH_BASE],&MS5837.fDepth,FLOAT_SIZE);
 
     /* 定深PID示例 */
-    // MSInfo.StcStatus.DepthSys = MSINAlgo_PID_Calculate(&DepthPID,MS5837.fDepth,TargetDepth);
-    // rt_mq_send(MotorSysmq,&MSInfo,sizeof(MotorSysInfo));
+    MSInfo.StcStatus.DepthSys = Algo_PID_Calculate(&DepthPID,MS5837.fDepth,TargetDepth);
+    printf("Depth:%f Target:%f PID:%d\r\n",MS5837.fDepth,TargetDepth,MSInfo.StcStatus.DepthSys);
+    rt_sem_release(MotorSys_Sem);
 }
 
 

@@ -1,7 +1,5 @@
 #include "task_handlemode.h"
 
-
-
 /**
  * @brief 手动模式处理函数
  * @param HMInfo 手动模式信息结构体指针
@@ -9,7 +7,7 @@
  */
 void Task_HandleMode_Process(HandleModeInfo *HMInfo)
 {
-	static MotorSysInfo MSInfo = {0};
+	// static MotorSysInfo MSInfo = {0};
     //非0数据显示
     if(HMInfo->JoystickInfo[0] != 0.0f && HMInfo->JoystickInfo[1] != 0.0f)
         printf("%f %f\r\n",HMInfo->JoystickInfo[0],HMInfo->JoystickInfo[1]);
@@ -21,61 +19,93 @@ void Task_HandleMode_Process(HandleModeInfo *HMInfo)
 		case 0:
 			if(HMInfo->keyPressed)
 			{
-				MSInfo.StcStatus.DirectSys[0] = -SPEED_DIRECT;
-				MSInfo.StcStatus.DirectSys[1] = -SPEED_DIRECT;
-				MSInfo.StcStatus.DirectSys[2] = -SPEED_DIRECT;
-				MSInfo.StcStatus.DirectSys[3] = -SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[0] -= SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[1] -= SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[2] -= SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[3] -= SPEED_DIRECT;
 			}
 			else
 				memset(MSInfo.StcStatus.DirectSys, 0, sizeof(MSInfo.StcStatus.DirectSys));
-			rt_mq_send(MotorSysmq, &MSInfo, sizeof(MotorSysInfo));
+			rt_sem_release(MotorSys_Sem);
 			break;
 		case 3:
 			if(HMInfo->keyPressed)
 			{
 				// printf("data:%d\r\n",MSInfo.StcStatus.DirectSys[0]);				
-				MSInfo.StcStatus.DirectSys[0] = SPEED_DIRECT;
-				MSInfo.StcStatus.DirectSys[1] = SPEED_DIRECT;
-				MSInfo.StcStatus.DirectSys[2] = SPEED_DIRECT;
-				MSInfo.StcStatus.DirectSys[3] = SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[0] += SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[1] += SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[2] += SPEED_DIRECT;
+				MSInfo.StcStatus.DirectSys[3] += SPEED_DIRECT;
 			}
 			else
 				memset(MSInfo.StcStatus.DirectSys, 0, sizeof(MSInfo.StcStatus.DirectSys));
-			rt_mq_send(MotorSysmq, &MSInfo, sizeof(MotorSysInfo));
+			rt_sem_release(MotorSys_Sem);
 			break;
 		//转向
 		case 1:
 			if(HMInfo->keyPressed)
-				MSInfo.StcStatus.YawSys = -SPEED_YAW;
-				//TargetYaw = -SPEED_YAW;
+			{
+				#ifdef YAW_STEP
+					rt_mutex_take(Orientation_Mutex,RT_WAITING_FOREVER);
+					TargetYaw -= YAW_STEP;
+					rt_mutex_release(Orientation_Mutex);
+			}
+			#else
+					MSInfo.StcStatus.YawSys -= SPEED_YAW;
+			}
 			else
 				MSInfo.StcStatus.YawSys = 0;
-			rt_mq_send(MotorSysmq, &MSInfo, sizeof(MotorSysInfo));
+			rt_sem_release(MotorSys_Sem);
+			#endif
 			break;
 		case 2:
 			if(HMInfo->keyPressed)
-				MSInfo.StcStatus.YawSys = SPEED_YAW;
-				//TargetYaw = -SPEED_YAW;
+			{
+				#ifdef YAW_STEP
+					rt_mutex_take(Orientation_Mutex,RT_WAITING_FOREVER);
+					TargetYaw += YAW_STEP;
+					rt_mutex_release(Orientation_Mutex);
+			}
+			#else
+					MSInfo.StcStatus.YawSys = SPEED_YAW;
+			}
 			else
 				MSInfo.StcStatus.YawSys = 0;
-			rt_mq_send(MotorSysmq, &MSInfo, sizeof(MotorSysInfo));
+			rt_sem_release(MotorSys_Sem);
+			#endif
 			break;
 		//升降
 		case 4:
 			if(HMInfo->keyPressed)
-				MSInfo.StcStatus.DepthSys = SPEED_DEPTH;
-				//TargetDepth = SPEED_DEPTH;
+			{
+				#ifdef DEPTH_STEP
+					rt_mutex_take(Depth_Mutex,RT_WAITING_FOREVER);
+					TargetDepth -= DEPTH_STEP;
+					rt_mutex_release(Depth_Mutex);
+			}
+			#else
+					MSInfo.StcStatus.DepthSys = SPEED_DEPTH;
+			}
 			else
 				MSInfo.StcStatus.DepthSys = 0;
-			rt_mq_send(MotorSysmq, &MSInfo, sizeof(MotorSysInfo));
+			rt_sem_release(MotorSys_Sem);
+			#endif
 			break;
 		case 5:
 			if(HMInfo->keyPressed)
-				MSInfo.StcStatus.DepthSys = -SPEED_DEPTH;
-				// TargetDepth = -SPEED_DEPTH;
+			{
+			#ifdef DEPTH_STEP
+					rt_mutex_take(Depth_Mutex,RT_WAITING_FOREVER);
+					TargetDepth += DEPTH_STEP;
+					rt_mutex_release(Depth_Mutex);
+			}
+					#else		
+					MSInfo.StcStatus.DepthSys -= SPEED_DEPTH;
+			}
 			else
 				MSInfo.StcStatus.DepthSys = 0;
-			rt_mq_send(MotorSysmq, &MSInfo, sizeof(MotorSysInfo));
+			rt_sem_release(MotorSys_Sem);
+			#endif
 			break;
 	}
 

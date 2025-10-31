@@ -4,8 +4,7 @@
 #include "drv_hal_conf.h"
 #include "config.h"
 #include "usercode.h"
-#include "task_reportdata.h"
-#include "task_motorsys.h"
+#include "task_conf.h"
 
 extern volatile int16_t TargetYaw;      // 目标偏航角
 extern volatile int16_t TargetPitch;    // 目标俯仰角

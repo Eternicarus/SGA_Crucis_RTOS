@@ -9,10 +9,14 @@ void UserLogic_Code(void);
 
 extern rt_sem_t JY901S_Sem;
 extern rt_sem_t CmdFromIPC_Sem;
+extern rt_sem_t MotorSys_Sem;
+
+extern rt_mutex_t Depth_Mutex;
+extern rt_mutex_t Orientation_Mutex;
+extern rt_mutex_t Handle_Mutex;
 
 extern rt_mq_t AutoModemq;
 extern rt_mq_t HandleModemq;
-extern rt_mq_t MotorSysmq;
 
 extern rt_thread_t TestThread_t;
 extern rt_thread_t ReportDataThread_t;
