@@ -20,9 +20,15 @@ bool SaveCsv = true;           //保存数据标志
 
 void SerialReadData::SRDworking()
 {
-    while(m_pserial->waitForReadyRead(50)) {        //最长等待50ms
-        serialBuf += m_pserial->readAll();
-    }
+    // while(m_pserial->waitForReadyRead(100)) {        //最长等待50ms
+    //     serialBuf += m_pserial->readAll();
+    // }
+
+    serialBuf = m_pserial->readAll();
+    qDebug() << "Bytes available before read:" << m_pserial->bytesAvailable();
+    qDebug() << "Received data size:" << serialBuf.size();
+    qDebug() << "Received data:" << serialBuf;
+    qDebug() << "Recv hex:" << serialBuf.toHex(' ');
 
     //LOG_INFO((char *)"串口收到数据%s",serialBuf.toStdString());
 

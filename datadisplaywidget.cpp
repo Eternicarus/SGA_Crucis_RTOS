@@ -400,7 +400,7 @@ void DataDisplayWidget::InitLogWidget()
     logPTE = new QPlainTextEdit;
     logPTE->setReadOnly(true);
     logPTE->setMinimumSize(300,185);
-    logPTE->setStyleSheet("background-color: black; color: black;border-radius:3px; background-color: #00000000;font: 20px 'Corbel Light'; border: 1px solid darkgray;");
+    logPTE->setStyleSheet("color: black; border-radius:3px; background-color: white; font: 20px 'Corbel Light'; border: 1px solid darkgray;");
 
     //串口发送行
     logTII = new textInputItem("Send Line:",this);
@@ -531,9 +531,12 @@ void DataDisplayWidget::slotLogDataDisplay(QByteArray serialBuf)
 {
     if(!this->isHidden())
     {
+        QTextCursor cursor = logPTE->textCursor();
+        cursor.movePosition(QTextCursor::End);
+        logPTE->setTextCursor(cursor);
+        logPTE->insertPlainText(QString(serialBuf));
         logPTE->ensureCursorVisible();
-        TextCursor.movePosition(QTextCursor::End);
-        TextCursor.insertText(QString(serialBuf));
+        // qDebug() << "insertText data:" << serialBuf;
     }
 }
 
@@ -658,35 +661,36 @@ void DataDisplayWidget::slotGPSDataDisplay(QByteArray ProcessedData)
 
 void DataDisplayWidget::slotJY901SDataDisplay(QByteArray ProcessedData)
 {
-    if(!this->isHidden())
-    {
-        float MagX,MagY,MagZ;       //磁场三值
-        std::memcpy(&MagX,&ProcessedData[MAG_BASE                 ],FLOAT_SIZE);
-        std::memcpy(&MagY,&ProcessedData[MAG_BASE +     FLOAT_SIZE],FLOAT_SIZE);
-        std::memcpy(&MagZ,&ProcessedData[MAG_BASE + 2 * FLOAT_SIZE],FLOAT_SIZE);
-        JY901SDataMag->setText(QString("X%1  Y%2  Z%3")
-                                .arg(QString::number(MagX)
-                                    ,QString::number(MagY)
-                                    ,QString::number(MagZ)));
+  qDebug() << "Received JY901S data:" << ProcessedData.toHex();
+  if (!this->isHidden()) {
+    float MagX, MagY, MagZ; // 磁场三值
+    std::memcpy(&MagX, &ProcessedData[MAG_BASE], FLOAT_SIZE);
+    std::memcpy(&MagY, &ProcessedData[MAG_BASE + FLOAT_SIZE], FLOAT_SIZE);
+    std::memcpy(&MagZ, &ProcessedData[MAG_BASE + 2 * FLOAT_SIZE], FLOAT_SIZE);
+    JY901SDataMag->setText(QString("X%1  Y%2  Z%3")
+                               .arg(QString::number(MagX),
+                                    QString::number(MagY),
+                                    QString::number(MagZ)));
 
-        float AccelX,AccelY,AccelZ; //加速度三值
-        std::memcpy(&AccelX,&ProcessedData[ACCEL_BASE                 ],FLOAT_SIZE);
-        std::memcpy(&AccelY,&ProcessedData[ACCEL_BASE +     FLOAT_SIZE],FLOAT_SIZE);
-        std::memcpy(&AccelZ,&ProcessedData[ACCEL_BASE + 2 * FLOAT_SIZE],FLOAT_SIZE);
-        JY901SDataAcc->setText(QString("X%1  Y%2  Z%3")
-                                .arg(QString::number(AccelX,'f',3)
-                                    ,QString::number(AccelY,'f',3)
-                                    ,QString::number(AccelZ,'f',3)));
+    float AccelX, AccelY, AccelZ; // 加速度三值
+    std::memcpy(&AccelX, &ProcessedData[ACCEL_BASE], FLOAT_SIZE);
+    std::memcpy(&AccelY, &ProcessedData[ACCEL_BASE + FLOAT_SIZE], FLOAT_SIZE);
+    std::memcpy(&AccelZ, &ProcessedData[ACCEL_BASE + 2 * FLOAT_SIZE],
+                FLOAT_SIZE);
+    JY901SDataAcc->setText(QString("X%1  Y%2  Z%3")
+                               .arg(QString::number(AccelX, 'f', 3),
+                                    QString::number(AccelY, 'f', 3),
+                                    QString::number(AccelZ, 'f', 3)));
 
-        float GyroX,GyroY,GyroZ;    //加速度三值
-        std::memcpy(&GyroX,&ProcessedData[GYRO_BASE                 ],FLOAT_SIZE);
-        std::memcpy(&GyroY,&ProcessedData[GYRO_BASE +     FLOAT_SIZE],FLOAT_SIZE);
-        std::memcpy(&GyroZ,&ProcessedData[GYRO_BASE + 2 * FLOAT_SIZE],FLOAT_SIZE);
-        JY901SDataGyro->setText(QString("X%1  Y%2  Z%3")
-                                .arg(QString::number(GyroX,'f',3)
-                                    ,QString::number(GyroY,'f',3)
-                                    ,QString::number(GyroZ,'f',3)));
-    }
+    float GyroX, GyroY, GyroZ; // 加速度三值
+    std::memcpy(&GyroX, &ProcessedData[GYRO_BASE], FLOAT_SIZE);
+    std::memcpy(&GyroY, &ProcessedData[GYRO_BASE + FLOAT_SIZE], FLOAT_SIZE);
+    std::memcpy(&GyroZ, &ProcessedData[GYRO_BASE + 2 * FLOAT_SIZE], FLOAT_SIZE);
+    JY901SDataGyro->setText(QString("X%1  Y%2  Z%3")
+                                .arg(QString::number(GyroX, 'f', 3),
+                                     QString::number(GyroY, 'f', 3),
+                                     QString::number(GyroZ, 'f', 3)));
+  }
 }
 
 //暂不使用

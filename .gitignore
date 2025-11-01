@@ -15,7 +15,7 @@ object_script.*.Debug
 *_plugin_import.cpp
 /.qmake.cache
 /.qmake.stash
-/build
+/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug
 *.pro.user
 *.pro.user.*
 *.qbs.user

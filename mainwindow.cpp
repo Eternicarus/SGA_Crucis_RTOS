@@ -411,6 +411,11 @@ void MainWindow::InitSerialPage()
     connect(serialBtn, &textButton::clicked, serialDialog, &SlidePage::slideIn);
     //按下串口设置按钮时，设置界面中comPortCBox的值
     connect(serialBtn, &textButton::clicked, this, [=](){
+        if (serial->isOpen()) {
+        serialDialog->slideIn();
+        qDebug() << "串口已打开，保持当前COM口:" << comPortCBox->currentText();
+        return;
+      }
         comPortCBox->clear();
         foreach(QSerialPortInfo portInfo, QSerialPortInfo::availablePorts())
             comPortCBox->addItem(portInfo.portName()+":"+portInfo.description());
@@ -421,12 +426,18 @@ void MainWindow::InitSerialPage()
     //按下串口设置按钮时，设置串口串口滑入
     connect(Data_display, &bigIconButton::clicked, serialDialog, &SlidePage::slideIn);
     //按下串口设置按钮时，设置界面中comPortCBox的值
-    connect(Data_display, &bigIconButton::clicked, this, [=](){
-        comPortCBox->clear();
-        foreach(QSerialPortInfo portInfo, QSerialPortInfo::availablePorts())
-            comPortCBox->addItem(portInfo.portName()+":"+portInfo.description());
-        openSerialBtn->setEnabled(comPortCBox->count()>0);
-        serial->setPortName(comPortCBox->currentText());
+    connect(Data_display, &bigIconButton::clicked, this, [=]() {
+      if (serial->isOpen()) {
+        serialDialog->slideIn();
+        qDebug() << "串口已打开，保持当前COM口:" << comPortCBox->currentText();
+        return;
+      }
+      comPortCBox->clear();
+      foreach (QSerialPortInfo portInfo, QSerialPortInfo::availablePorts())
+        comPortCBox->addItem(portInfo.portName() + ":" +
+                             portInfo.description());
+      openSerialBtn->setEnabled(comPortCBox->count() > 0);
+      serial->setPortName(comPortCBox->currentText());
     });
 
     //按下打开串口按钮时，打开串口
@@ -871,6 +882,7 @@ void MainWindow::CloseSerialPort()
     if (serial->isOpen())
     {
         serial->close();
+        comPortCBox->setEnabled(true);
         openSerialBtn->setEnabled(true);
         closeSerialBtn->setEnabled(false);
         QMessageBox::information(this,"提示信息","串口关闭成功");
@@ -948,9 +960,10 @@ void MainWindow::CloseYOLOSerialPort()
     if (serialYOLO->isOpen())
     {
         serialYOLO->close();
+        YOLOcomPortCBox->setEnabled(true);
         openSerialYOLOBtn->setEnabled(true);
         closeSerialYOLOBtn->setEnabled(false);
-        QMessageBox::information(this,"提示信息","串口关闭成功");
+        QMessageBox::information(this,"提示信息","YOLO串口关闭成功");
         return;
     }
 }
