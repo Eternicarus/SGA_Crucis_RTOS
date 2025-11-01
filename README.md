@@ -1,0 +1,1 @@
+build/Desktop_Qt_6_9_1_MSVC2022_64bit-CrucisIPCL/release/CrucisIPC.exe双击启动
