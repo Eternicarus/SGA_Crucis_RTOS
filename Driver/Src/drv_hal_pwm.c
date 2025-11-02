@@ -878,13 +878,13 @@ void Drv_PWM_HighLvTimeSet(tagPWM_T *_tPWM, uint16_t _usTime)
  * @param _ucNum-PWMÊýÁ¿
  * @retval Null
 */
-void Drv_PWM_Init(tagPWM_T *_tPWM, uint8_t _ucNum)
+void Drv_PWM_Init(tagPWM_T *_tPWM, uint8_t _ucStart, uint8_t _ucEnd)
 {
 	uint8_t index;
 
     s_ucpCheckCache = (uint8_t *)calloc(0,TIM_CHANNEL_COUNT);
 
-	for(index = 0;index < _ucNum;index++)
+	for(index = _ucStart; index < _ucEnd; index++)
 	{
 		S_PWM_ParamMatch(&_tPWM[index]);
 		S_PWM_CLKEnable(&_tPWM[index]);

@@ -72,6 +72,6 @@ typedef struct
 
 void Drv_PWM_DutyFactorSet(tagPWM_T *_tPWM,float _fDuty);
 void Drv_PWM_HighLvTimeSet(tagPWM_T *_tPWM, uint16_t _usTime);
-void Drv_PWM_Init(tagPWM_T *_tPWM, uint8_t _ucNum);
+void Drv_PWM_Init(tagPWM_T *_tPWM, uint8_t _ucStart, uint8_t _ucEnd);
 
 #endif

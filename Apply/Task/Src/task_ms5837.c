@@ -8,8 +8,6 @@ volatile float TargetDepth = 0.0f; // 目标深度
  */
 void Task_MS5837_Handle(void)
 {
-    // MotorSysInfo MSInfo;
-
     OCD_MS5837_GetData(&MS5837);
     if(MS5837.fDepth == 153150.250000)  //未接MS5837的错误数据
         MS5837.fDepth = 0;
@@ -19,8 +17,8 @@ void Task_MS5837_Handle(void)
     memcpy(&ReportDataBuffer[DEPTH_BASE],&MS5837.fDepth,FLOAT_SIZE);
 
     /* 定深PID示例 */
-    MSInfo.StcStatus.DepthSys = Algo_PID_Calculate(&DepthPID,MS5837.fDepth,TargetDepth);
-    printf("Depth:%f Target:%f PID:%d\r\n",MS5837.fDepth,TargetDepth,MSInfo.StcStatus.DepthSys);
+    // MSInfo.StcStatus.DepthSys = Algo_PID_Calculate(&DepthPID,MS5837.fDepth,TargetDepth);
+    // printf("Depth:%f Target:%f PID:%d\r\n",MS5837.fDepth,TargetDepth,MSInfo.StcStatus.DepthSys);
     rt_sem_release(MotorSys_Sem);
 }
 

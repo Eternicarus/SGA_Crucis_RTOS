@@ -53,11 +53,8 @@ void Task_ReportData_Handle(void)
 
     while(1)
     {
-//        S_PWMHighLvTime_Function();
-//        Drv_Uart_Transmit_DMA(&Uart3,ReportDataBuffer,FRAMEEND_BASE + 1);
-        Drv_Delay_Ms(300);
+        S_PWMHighLvTime_Function();
+        Drv_Uart_Transmit_DMA(&Uart1,ReportDataBuffer,FRAMEEND_BASE + 1);
+        Drv_Delay_Ms(3000);
     }
 }
-
-
-

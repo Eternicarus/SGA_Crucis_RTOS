@@ -47,7 +47,7 @@ typedef struct
 
 extern MotorSysInfo MSInfo;
 
-void Task_MotorSys_Init(void);
+void Task_MotorSys_Init(uint8_t _ucNum);
 void Task_MotorSys_Thruster_SpeedSet(uint8_t index,uint16_t _highTime);
 void Task_MotorSys_AllThruster_SpeedSet(uint16_t _highTime);
 void Task_MotorSys_Thruster_Start(uint8_t index,uint16_t _highTime);

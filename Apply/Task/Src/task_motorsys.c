@@ -2,13 +2,26 @@
 
 /**
  * @brief 电机系统初始化函数
- * @param Null
+ * @param _ucNum-电机数量
  */
-void Task_MotorSys_Init(void)
+void Task_MotorSys_Init(uint8_t _ucNum)
 {
-    Drv_PWM_Init(PWM,11);   /* 初始化PWM */
-    Drv_Delay_Ms(3000);
+    uint8_t start = 0;
+    uint8_t end;
+
+    while (start < _ucNum)
+    {
+        end = start + 4;
+        if (end > _ucNum)
+            end = _ucNum;
+
+        Drv_PWM_Init(PWM, start, end);
+        Drv_Delay_Ms(1000);
+
+        start = end;
+    }
 }
+
 
 
 /**
@@ -106,51 +119,84 @@ void Task_MotorSys_AllThruster_Stop(void)
 */
 void Task_MotorSys_Steer_Angle_Set(uint8_t index, uint8_t ang)
 {
-    // float now_pulse = 0.0;
+    float now_pulse = 0.0;
     // 添加角度范围保护
     if(ang > 180) ang = 180;
     
     // 使用浮点数确保精度
     float pulse_us = 500.0f + (ang / 180.0f) * 2000.0f;
 
-    // switch(PWM[index].ucChannel)
-	// 	{
-	// 		case TIM_CHANNEL_1:
-	// 			now_pulse = PWM[index].tPWMHandle.Instance->CCR1;
-	// 		break;
+    switch(PWM[index].ucChannel)
+		{
+			case TIM_CHANNEL_1:
+				now_pulse = PWM[index].tPWMHandle.Instance->CCR1;
+			break;
 			
-	// 		case TIM_CHANNEL_2:
-	// 			now_pulse = PWM[index].tPWMHandle.Instance->CCR2;
-	// 		break;
+			case TIM_CHANNEL_2:
+				now_pulse = PWM[index].tPWMHandle.Instance->CCR2;
+			break;
 			
-	// 		case TIM_CHANNEL_3:
-	// 			now_pulse = PWM[index].tPWMHandle.Instance->CCR3;
-	// 		break;
+			case TIM_CHANNEL_3:
+				now_pulse = PWM[index].tPWMHandle.Instance->CCR3;
+			break;
 			
-	// 		case TIM_CHANNEL_4:
-	// 			now_pulse = PWM[index].tPWMHandle.Instance->CCR4;
-	// 		break;
+			case TIM_CHANNEL_4:
+				now_pulse = PWM[index].tPWMHandle.Instance->CCR4;
+			break;
 			
-	// 		default:
-	// 			Drv_HAL_Error(__FILE__, __LINE__);
-	// 		break;
-	// 	}
-    //     // printf("now_pulse_start: %f\r\n", now_pulse);
+			default:
+				Drv_HAL_Error(__FILE__, __LINE__);
+			break;
+		}
+        // printf("now_pulse_start: %f\r\n", now_pulse);
     // while(now_pulse < pulse_us)
     // {
-    //     now_pulse += 5;
+    //     now_pulse += 50;
+    //     if(now_pulse > pulse_us)
+    //         now_pulse = pulse_us;
     //     Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)now_pulse);
     //     // printf("now_pulse: %f\r\n", now_pulse);
-    //     Drv_Delay_Ms(1);
+    //     Drv_Delay_Ms(10);
     // }
     // while(now_pulse > pulse_us)
     // {
-    //     now_pulse -= 5;
+    //     now_pulse -= 50;
+    //     if(now_pulse < pulse_us)
+    //         now_pulse = pulse_us;
     //     Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)now_pulse);
     //     // printf("now_pulse: %f\r\n", now_pulse);
-    //     Drv_Delay_Ms(1);
+    //     Drv_Delay_Ms(10);
     // }
-    Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)pulse_us);
+    // const uint16_t step_delay = 10;  // 每步间隔时间
+    // int16_t steps = 200 / step_delay;
+    // float delta = (pulse_us - now_pulse) / steps;
+
+    // for (int i = 0; i < steps; i++)
+    // {
+    //     now_pulse += delta;
+    //     Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)now_pulse);
+    //     Drv_Delay_Ms(step_delay);
+    // }
+
+    // // 确保最终精确到目标
+    // Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)pulse_us);
+    int16_t step = 50;  // 每次变化量
+    if (now_pulse > pulse_us)
+        step = -step;
+
+    while ((step > 0 && now_pulse < pulse_us) ||
+           (step < 0 && now_pulse > pulse_us))
+    {
+        now_pulse += step;
+
+        // 防止越界
+        if ((step > 0 && now_pulse > pulse_us) ||
+            (step < 0 && now_pulse < pulse_us))
+            now_pulse = pulse_us;
+
+        Drv_PWM_HighLvTimeSet(&PWM[index], (uint32_t)now_pulse);
+        Drv_Delay_Ms(10);  // 可替换为 RTOS 延时
+    }
 }
 
 /**

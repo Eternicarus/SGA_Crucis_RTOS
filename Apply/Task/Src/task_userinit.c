@@ -34,5 +34,5 @@ void Task_UserInit(void)
     if(OCD_MS5837_Init(&MS5837) == 0)	/* 初始化MS5837 */
         printf("MS5837 error\r\n");
 
-    Task_MotorSys_Init();       /* 初始化电机系统 */
+    Task_MotorSys_Init(PWM_NUM);       /* 初始化电机系统 */
 }
