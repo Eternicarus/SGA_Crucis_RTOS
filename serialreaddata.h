@@ -1,17 +1,19 @@
 #ifndef SERIALREADDATA_H
 #define SERIALREADDATA_H
 
-#include <QObject>
-#include <QThread>
-#include <QSerialPort>
+#include "./log/log.h"
 #include <QDebug>
-#include <vector>
+#include <QDir>
+#include <QFile>
+#include <QMutex>
+#include <QObject>
+#include <QSerialPort>
+#include <QThread>
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <QFile>
-#include <QDir>
-#include "./log/log.h"
+#include <vector>
+
 
 extern bool SaveCsv;           //保存数据标志
 
@@ -25,6 +27,7 @@ public:
 private:
     QSerialPort *m_pserial;
     QByteArray serialBuf;  //储存接收到的数据
+    QMutex bufMutex;
     QFile CsvFile;         //Csv文件对象
     QString dtStr;         //Csv文件路径
 signals:

@@ -840,7 +840,7 @@ void MainWindow::OpenSerialPort()
         SDAthread->start();
 
         //当线程完成读取时，根据空格整理数据，发送给数据分析线程
-        connect(SRDwork,&SerialReadData::sigDataSort,SDAwork,&SerialDataAnalyze::SDAworking);
+        connect(SRDwork,&SerialReadData::sigDataSort,SDAwork,&SerialDataAnalyze::SDAworking,Qt::QueuedConnection);
 
         //当线程完成读取时，要求显示在MotionControlWidget的Log控件中
         connect(SDAwork,&SerialDataAnalyze::sigLogDataDisplay,motionControlWidget,&MotionControlWidget::slotLogDataDisplay);
